@@ -64,12 +64,9 @@
     public function getCodigoResponsavel(){
         return $this->codigoResponsavel;
     }
-
-    public function codigoResgetCodigoResponsavel($codigoResponsavel){
+    public function setCodigoResponsavel($codigoResponsavel){
         $this->codigoResponsavel = $codigoResponsavel;        
-    }
-    
-    
+    }    
  }
 
  /*

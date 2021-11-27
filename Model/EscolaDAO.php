@@ -17,10 +17,12 @@ class EscolaDAO{
 
            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
             $escola = new Escola();
+            $escola->setcodigoEscola($linha['codigoEscola']);
             $escola->setNomeEscola($linha['nomeEscola']);
             $escola->setCnpj($linha['cnpj']);
             $escola->setTelefone($linha['telefone']);
             $escola->setEmail($linha['email']);
+            $escola->setLogo($linha['nomeLogo']);
             $escola->setEndereco($linha['endereco']);
             $listaEscola[$i] = $escola;
             $i++;
@@ -37,13 +39,17 @@ class EscolaDAO{
     public function incluirEscola($esc){
        try{
            $minhaConexao = Conexao::getConexao();
-           $sql = $minhaConexao->prepare("insert into bd_projeto2021.escola (nomeEscola, cnpj, telefone) values (:nomeEscola, :cnpj,:telefone)");
+           $sql = $minhaConexao->prepare("insert into bd_projeto2021.escola (nomeEscola, cnpj, telefone, email, endereco) values (:nomeEscola, :cnpj, :telefone, :email, :endereco)");
            $sql->bindParam("nomeEscola",$nomeEscola);
            $sql->bindParam("cnpj",$cnpj);
            $sql->bindParam("telefone",$telefone);
+           $sql->bindParam("endereco",$endereco);
+           $sql->bindParam("email",$email);
            $nomeEscola = $esc->getNomeEscola();
            $cnpj = $esc->getCnpj();
            $telefone = $esc->getTelefone();
+           $endereco = $esc->getEndereco();
+           $email = $esc->getEmail();
            $sql->execute();
            
            $last_id = $minhaConexao->lastInsertId();

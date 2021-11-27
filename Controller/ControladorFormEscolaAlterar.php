@@ -9,8 +9,8 @@ class ControladorFormEscolaAlterar implements IControlador{
         $this->escola = new Escola();
     }
     public function processaRequisicao(){
-        $this->escola->setCodigoEscola($_POST['codigoEscola']);
-        $this->escola->pesquisaEscola();
+        $this->escola->setCodigoEscola($_POST['id']);
+        //$this->escola->pesquisaEscola();
         $codigoEscola = $this->escola->getCodigoEscola();
         $nomeEscola = $this->escola->getNomeEscola();
         $cnpj = $this->escola->getCnpj();
@@ -18,7 +18,7 @@ class ControladorFormEscolaAlterar implements IControlador{
         $email = $this->escola->getEmail();
         $logo = $this->escola->getLogo();
         $endereco = $this->escola->getEndereco();
-        $codigoResponsavel = $this->escola->getCodigoResponsavel();
+        //$codigoResponsavel = $this->escola->getCodigoResponsavel();
         require "View/AlteraEscola.php";
     }
 }

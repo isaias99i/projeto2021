@@ -15,11 +15,11 @@ class ControladorNovaEscola implements IControlador{
         $this->escola->setCnpj($_POST['cnpj']);
         $this->escola->setTelefone($_POST['telefone']);
         $this->escola->setEmail($_POST['email']);
-        $this->escola->setLogo($_FILES['logo']);
         $this->escola->setEndereco($_POST['endereco']);
-        $this->escola->setCodigoResponsavel($_POST['codigoResponsavel']);
+        $this->escola->setLogo($_FILES['logo']);
+        //$this->escola->setCodigoResponsavel($_POST['codigoResponsavel']);
       
-      $this->escola->incluirLivro();
+      $this->escola->incluirEscola();
  
       header('Location:Principal', true,302);
    }

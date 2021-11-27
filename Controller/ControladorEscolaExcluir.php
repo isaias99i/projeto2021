@@ -10,7 +10,7 @@ class ControladorEscolaExcluir implements IControlador{
    
    public function processaRequisicao(){
       //receber os dados do formulario e setar o objeto
-      $this->escola->setCodigoEscola($_POST['codigoEscola']);
+      $this->escola->setCodigoEscola($_POST['id']);
       
       $this->escola->excluirEscola();
  

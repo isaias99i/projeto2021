@@ -15,7 +15,7 @@ class ControladorEscolaAlterar implements IControlador{
         $this->escola->setEmail($_POST['email']);
         $this->escola->setLogo($_FILES['logo']);
         $this->escola->setEndereco($_POST['endereco']);
-        $this->escola->setCodigoResponsavel($_POST['codigoResponsavel']);
+        //$this->escola->setCodigoResponsavel($_POST['codigoResponsavel']);
 
         $this->escola->alterarEscola();
 

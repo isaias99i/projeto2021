@@ -7,6 +7,7 @@
     private $telefone;
     private $email;
     private $logo;
+    private $nomeLogo;
     private $endereco;
     private $situacao;
     private $codigoResponsavel;    
@@ -54,6 +55,12 @@
     public function setLogo($logo){
         $this->logo = $logo;        
     }
+    public function getNomeLogo(){
+        return $this->nomeLogo;
+    }
+    public function setNomeLogo($nomeLogo){
+        $this->nomeLogo = $nomeLogo;        
+    }
     
     public function getEndereco(){
         return $this->endereco;
@@ -67,30 +74,23 @@
     public function setCodigoResponsavel($codigoResponsavel){
         $this->codigoResponsavel = $codigoResponsavel;        
     }    
+ 
+    public function listarTodos(){
+        $escolaDAO = new EscolaDAO();
+        return $escolaDAO->listarTodos();
+    }
+    public function incluirEscola(){
+        $escolaDAO = new EscolaDAO();
+        $escolaDAO->incluirEscola($this);
+    }
+    public function alterarEscola(){
+        $escolaDAO = new EscolaDAO();
+        $escolaDAO->alterarEscola($this);
+    }
+    public function excluirEscola(){
+        $escolaDAO = new EscolaDAO();
+        $escolaDAO->excluirEscola($this);
+    }
  }
 
- /*
-    public function incluirLivro(){
-         $livroDAO = new LivroDAO();
-         $livroDAO->incluirLivro($this);
-    }
-    public function excluirLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->excluirLivro($this);
-    }
-    public function pesquisaLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->pesquisaLivro($this);
-    }
-    public function alterarLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->alterarLivro($this);
-    }
-    public function listarTodos(){
-        $livroDAO = new LivroDAO();
-        return $livroDAO->listarTodos();
-    }
-    */
 ?>
-
-

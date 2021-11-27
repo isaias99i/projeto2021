@@ -1,7 +1,7 @@
 <?php
 require "Model/Escola.php";
 require_once "IControlador.php";
-class ControladorFormEscola implements IControlador{
+class ControladorEscolaListar implements IControlador{
     private $escola;
 
     public function __construct(){

@@ -25,7 +25,7 @@
       </div>
 
       <ul class="nav nav-tabs">
-        <li class="active"><a href="Principal.html">Home</a></li>        
+        <li class="active" action="Inicio"><a>Home</a></li>        
         <li><a href="CadEscola.php">Cadastrar Escola</a></li>        
         
       </ul>

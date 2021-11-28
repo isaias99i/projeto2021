@@ -30,6 +30,7 @@ require 'Cabecalho.php';
         <label for="endereco">Endereço:</label>
         <input type="endereco" class="form-control" id="endereco" placeholder="Digite o endereço" name="endereco">
       </div>            
-        <button type="submit" class="btn btn-primary">Enviar</button>     
+       <button type="submit" class="btn btn-primary">Enviar</button>
+       <!--  <a type="submit" href="IncluirFuncionario" class="btn btn-primary">Cadastrar Funcionario</a>-->
     </form>  
 <?php require "Rodape.php";?>

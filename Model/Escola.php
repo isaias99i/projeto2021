@@ -91,6 +91,10 @@
         $escolaDAO = new EscolaDAO();
         $escolaDAO->excluirEscola($this);
     }
+    public function entrarEscola(){
+        $escolaDAO = new EscolaDAO();
+        $escolaDAO->entrarEscola($this);
+    }
  }
 
 ?>

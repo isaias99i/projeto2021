@@ -1,5 +1,5 @@
 <?php 
-$tituloPagina="Lista de Escolas";
+$tituloPagina="Gouba | Gerenciamento";
 require "Cabecalho.php";
 ?>
 
@@ -10,6 +10,7 @@ function confirma(){
 </script>
 
   <a href="NovaEscola" class="btn btn-primary">Nova Escola</a>
+  <a href="NovoUsuario" class="btn btn-success">Novo Usuário</a>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -40,6 +41,12 @@ function confirma(){
            <form method="post" action="FormAlterarEscola" >
              <input type="hidden" name="id" value="<?php echo $listaEscola[$i]->getCodigoEscola();?>">
              <input type="submit" class="btn btn-primary btn-sm" value= "Alterar">
+           </form>
+           </td>
+           <td>
+           <form method="post" action="FormEntrarEscola" >
+             <input type="hidden" name="id" value="<?php echo $listaEscola[$i]->getCodigoEscola();?>">
+             <input type="submit" class="btn btn-success btn-sm" value= "Entrar">
            </form>
            </td>
            </tr>   

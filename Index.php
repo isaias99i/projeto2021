@@ -36,6 +36,26 @@
                     $controlador = new ControladorEscolaListar();
                     $controlador->processaRequisicao();
 					break;
+				case "NOVOUSUARIO":
+					require "Controller/ControladorFormUsuario.php";
+					$controlador = new ControladorFormUsuario();
+					$controlador->processaRequisicao();
+					break;
+				case "INCLUIRUSUARIO":
+					require "Controller/ControladorNovoUsuario.php";
+					$controlador = new ControladorNovoUsuario();
+					$controlador->processaRequisicao();
+					break;
+				case "INICIO":
+					require "Controller/ControladorInicio.php";
+					$controlador = new ControladorInicio();
+					$controlador->processaRequisicao();
+					break;
+				case "FORMENTRARESCOLA":
+					require "Controller/ControladorEntrarEscola.php";
+					$controlador = new ControladorEntrarEscola();
+					$controlador->processaRequisicao();
+					break;
 				default:
 				    require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();

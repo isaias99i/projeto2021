@@ -2,13 +2,21 @@
 <html lang="en">
 
 <head>
-  <title>Cadastro</title>
+  <title><?php echo $tituloPagina ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="scripts/Principal.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!--<style>
+    .left {
+    text-align: left;
+    }
+    .center {
+      text-align:center;
+    }
+  </style>-->
   
 </head>
 
@@ -26,12 +34,13 @@
       </div>
 
       <ul class="nav nav-tabs">
-        <li><a href="Principal.html">Home</a></li>        
+        <li><a href="Principal">Home</a></li>        
         <li><a href="CadEscola.php">Cadastrar Escola</a></li>        
         
       </ul>
     </div>
   </nav>
+</body>
 
 <div class="container">
-  <h2><?php echo $tituloPagina ?></h2>
+<h2><?php echo $tituloPagina ?></h2>

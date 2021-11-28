@@ -43,8 +43,8 @@ class EscolaDAO{
            $sql->bindParam("nomeEscola",$nomeEscola);
            $sql->bindParam("cnpj",$cnpj);
            $sql->bindParam("telefone",$telefone);
-           $sql->bindParam("endereco",$endereco);
            $sql->bindParam("email",$email);
+           $sql->bindParam("endereco",$endereco);
            $nomeEscola = $esc->getNomeEscola();
            $cnpj = $esc->getCnpj();
            $telefone = $esc->getTelefone();
@@ -68,7 +68,7 @@ class EscolaDAO{
                $sql->bindParam("nomeLogo",$nomeFinal);
                $sql->bindParam("codigoEscola",$last_id);
                $sql->execute();
-               echo "atulizou o nomeEscola da logo no bd";
+               echo "atualizou o nomeEscola da logo no bd";
                
              }
            }
@@ -98,6 +98,23 @@ class EscolaDAO{
          catch(PDOException $e){
              //echo "entrou no catch".$e->getmessage();
             
+         }
+     }
+
+     public function entrarEscola($esc){
+        try{
+            $minhaConexao = Conexao::getConexao();
+            $sql = $minhaConexao->prepare("select * from bd_projeto2021.escola where codigoEscola=:codigoEscola, nomeEscola=:nomeEscola");
+            $sql->bindParam("codigoEscola",$codigoEscola);
+            $sql->bindParam("nomeEscola",$nomeEscola);
+            //$nomeEscola = $esc->getNomeEscola();
+            
+            $sql->execute();
+            
+         }
+         catch(PDOException $e){
+             echo "entrou no catch! ".$e->getmessage();
+             exit();
          }
      }
 

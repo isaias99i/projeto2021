@@ -56,6 +56,16 @@
 					$controlador = new ControladorEntrarEscola();
 					$controlador->processaRequisicao();
 					break;
+				case "NOVOPRODUTO":
+					require "Controller/ControladorFormProduto.php";    
+					$controlador = new ControladorFormProduto();
+					$controlador->processaRequisicao();
+					break;
+				case "INCLUIRPRODUTO":
+					require "Controller/ControladorNovoProduto.php";    
+					$controlador = new ControladorNovoProduto();
+					$controlador->processaRequisicao();
+					break;
 				default:
 				    require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();

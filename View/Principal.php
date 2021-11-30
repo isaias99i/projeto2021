@@ -21,7 +21,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img src="/Icons/gouba_sem_fundo.png" alt="some text" width=60 height=50>
+        <img src="../Icons/gouba_sem_fundo.png" alt="some text" width=60 height=50>
       </div>
 
       <ul class="nav nav-tabs">

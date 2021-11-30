@@ -66,6 +66,26 @@
 					$controlador = new ControladorNovoProduto();
 					$controlador->processaRequisicao();
 					break;
+				case "EXCLUIPRODUTO":
+					require "Controller/ControladorProdutoExcluir.php";    
+					$controlador = new ControladorProdutoExcluir();
+					$controlador->processaRequisicao();
+					break;
+				case "FORMALTERAPRODUTO":
+					require "Controller/ControladorFormProdutoAlterar.php";    
+					$controlador = new ControladorFormProdutoAlterar();
+					$controlador->processaRequisicao();
+					break;
+				case "ALTERAPRODUTO":
+					require "Controller/ControladorProdutoAlterar.php";    
+					$controlador = new ControladorProdutoAlterar();
+					$controlador->processaRequisicao();
+					break;
+				case "LISTAPRODUTO":
+					require "Controller/ControladorProdutoListar.php";
+					$controlador = new ControladorProdutoListar();
+					$controlador->processaRequisicao();
+					break;
 				default:
 				    require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();

@@ -33,6 +33,7 @@
     }
     
     public function getTipoProduto(){
+        //$tipoProduto == "B" ? "Bebida" : "Comida";
         return $this->tipoProduto;
     }
 

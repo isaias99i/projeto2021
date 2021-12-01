@@ -118,6 +118,10 @@
         $this->nomeFoto = $nomeFoto;        
     }
     
+    public function listarTodos(){
+        $usuarioDAO = new UsuarioDAO();
+        $usuarioDAO->listarTodos($this);
+    }
     public function incluirUsuario(){
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->incluirUsuario($this);

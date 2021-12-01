@@ -81,7 +81,7 @@
         $this->preco = $preco;        
     }
     
-    public function getCodigoFornecedor(){
+    /*public function getCodigoFornecedor(){
         return $this->codigoFornecedor;
     }
 
@@ -95,7 +95,7 @@
 
     public function setCodigoEscola($codigoEscola){
         $this->codigoEscola = $codigoEscola;        
-    }
+    }*/
     
     public function listarTodos(){
         $produtoDAO = new ProdutoDAO();

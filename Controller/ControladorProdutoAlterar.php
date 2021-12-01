@@ -8,6 +8,7 @@ class ControladorProdutoAlterar implements IControlador{
         $this->produto = new Produto();
     }
     public function processaRequisicao(){
+        
         $this->produto->setCodigoProduto($_POST['codigoProduto']);
         $this->produto->setNomeProduto($_POST['nomeProduto']);
         $this->produto->setTipoProduto($_POST['tipoProduto']);
@@ -15,13 +16,13 @@ class ControladorProdutoAlterar implements IControlador{
         $this->produto->setFornecedor($_POST['fornecedor']);
         $this->produto->setFoto($_FILES['foto']);
         $this->produto->setPreco($_POST['preco']);
-        $this->produto->setCodigoFornecedor($_POST['codigoFornecedor']);
-        $this->produto->setCodigoEscola($_POST['codigoEscola']);
+        //$this->produto->setCodigoFornecedor($_POST['codigoFornecedor']);
+        //$this->produto->setCodigoEscola($_POST['codigoEscola']);
         //$this->produto->setCodigoResponsavel($_POST['codigoResponsavel']);
 
         $this->produto->alterarProduto();
 
-        header('Location:Principal', true,302);
+        header('Location:LISTARPRODUTO', true,302);
     }
 }
 

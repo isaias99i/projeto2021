@@ -48,7 +48,7 @@ class ProdutoDAO{
            $sql->bindParam("codigoFornecedor",$codigoFornecedor);
            $sql->bindParam("codigoEscola",$codigoEscola);
            $nomeProduto = $esc->getNomeProduto();
-           $tipoProduto = $esc->gettipoProduto();
+           $tipoProduto = $esc->getTipoProduto();
            $ingredientes = $esc->getIngredientes();
            $fornecedor = $esc->getFornecedor();
            $preco = $esc->getPreco();
@@ -87,7 +87,7 @@ class ProdutoDAO{
     public function alterarProduto($esc){
         try{
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("update bd_projeto2021.produto set nomeProduto=:nomeProduto tipoProduto=:tipoProduto ingredientes=:ingredientes fornecedor=:fornecedor preco=:preco codigoFornecedor=:codigoFornecedor codigoEscola=:codigoEscola where codigoProduto=:codigoProduto");
+            $sql = $minhaConexao->prepare("update bd_projeto2021.produto set nomeProduto=:nomeProduto tipoProduto=:tipoProduto ingredientes=:ingredientes fornecedor=:fornecedor preco=:preco where codigoProduto=:codigoProduto");
             $sql->bindParam("nomeProduto",$nomeProduto);
             $sql->bindParam("tipoProduto",$tipoProduto);
             $sql->bindParam("ingredientes",$ingredientes);
@@ -100,13 +100,13 @@ class ProdutoDAO{
             $ingredientes = $esc->getIngredientes();
             $fornecedor = $esc->getFornecedor();
             $preco = $esc->getPreco();
-            $codigoFornecedor = $esc->getFornecedor();
-            $codigoEscola = $esc->getEscola();
+            /*$codigoFornecedor = $esc->getFornecedor();
+            $codigoEscola = $esc->getEscola();*/
             $sql->execute();
             
          }
          catch(PDOException $e){
-             //echo "entrou no catch".$e->getmessage();
+             echo "entrou no catch".$e->getmessage();
             
          }
      }     

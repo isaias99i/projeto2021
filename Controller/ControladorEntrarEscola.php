@@ -10,7 +10,7 @@ class ControladorEntrarEscola implements IControlador{
    
    public function processaRequisicao(){
       //receber os dados do formulario e setar o objeto
-      $this->escola->setNomeEscola($_POST['id']);
+      $this->escola->setNomeEscola($_POST['nomeEscola']);
       
       $this->escola->entrarEscola();
  

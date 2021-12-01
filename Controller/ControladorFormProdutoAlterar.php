@@ -18,9 +18,9 @@ class ControladorFormProdutoAlterar implements IControlador{
         $fornecedor = $this->produto->getFornecedor();
         $foto = $this->produto->getFoto();
         $preco = $this->produto->getPreco();
-        $codigoFornecedor = $this->produto->getCodigoFornecedor();
+        /*$codigoFornecedor = $this->produto->getCodigoFornecedor();
         $codigoEscola = $this->produto->setCodigoEscola();
-        //$codigoResponsavel = $this->produto->getCodigoResponsavel();
+        $codigoResponsavel = $this->produto->getCodigoResponsavel();*/
         require "View/AlteraProduto.php";
     }
 }

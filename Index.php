@@ -36,6 +36,11 @@
                     $controlador = new ControladorEscolaListar();
                     $controlador->processaRequisicao();
 					break;
+			    case "LISTARUSUARIO":
+					require "Controller/ControladorUsuarioListar.php";
+                    $controlador = new ControladorUsuarioListar();
+                    $controlador->processaRequisicao();
+					break;
 				case "NOVOUSUARIO":
 					require "Controller/ControladorFormUsuario.php";
 					$controlador = new ControladorFormUsuario();
@@ -66,12 +71,12 @@
 					$controlador = new ControladorNovoProduto();
 					$controlador->processaRequisicao();
 					break;
-				case "EXCLUIPRODUTO":
+				case "EXCLUIRPRODUTO":
 					require "Controller/ControladorProdutoExcluir.php";    
 					$controlador = new ControladorProdutoExcluir();
 					$controlador->processaRequisicao();
 					break;
-				case "FORMALTERAPRODUTO":
+				case "FORMALTERARPRODUTO":
 					require "Controller/ControladorFormProdutoAlterar.php";    
 					$controlador = new ControladorFormProdutoAlterar();
 					$controlador->processaRequisicao();

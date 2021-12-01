@@ -100,24 +100,7 @@ class EscolaDAO{
             
          }
      }
-
-     public function entrarEscola($esc){
-        try{
-            $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("select * from bd_projeto2021.escola where codigoEscola=:codigoEscola, nomeEscola=:nomeEscola");
-            $sql->bindParam("codigoEscola",$codigoEscola);
-            $sql->bindParam("nomeEscola",$nomeEscola);
-            //$nomeEscola = $esc->getNomeEscola();
-            
-            $sql->execute();
-            
-         }
-         catch(PDOException $e){
-             echo "entrou no catch! ".$e->getmessage();
-             exit();
-         }
-     }
-
+     
     public function excluirEscola($esc){
         try{
             $minhaConexao = Conexao::getConexao();
@@ -130,6 +113,23 @@ class EscolaDAO{
          }
          catch(PDOException $e){
              echo "entrou no catch".$e->getmessage();
+             exit();
+         }
+     }
+
+     public function entrarEscola($esc){
+        try{
+            $minhaConexao = Conexao::getConexao();
+            $sql = $minhaConexao->prepare("select * from bd_projeto2021.escola where nomeEscola=:nomeEscola");
+            //$sql->bindParam("codigoEscola",$codigoEscola);
+            $sql->bindParam("nomeEscola",$nomeEscola);
+            //$nomeEscola = $esc->getNomeEscola();
+            
+            $sql->execute();
+            
+         }
+         catch(PDOException $e){
+             echo "entrou no catch! ".$e->getmessage();
              exit();
          }
      }

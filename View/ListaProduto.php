@@ -1,5 +1,5 @@
 <?php 
-$tituloPagina="Gouba | Gerenciamento";
+$tituloPagina="Gouba | Gerenciamento | Produtos";
 require "Cabecalho.php";
 ?>
 
@@ -9,11 +9,12 @@ function confirma(){
 }
 </script>
 
-  <a href="NovaEscola" class="btn btn-primary">Nova Escola</a>
-  <a href="NovoUsuario" class="btn btn-info">Novo Usuário</a>
-  <a href="NovoProduto" class="btn btn-success">Novo Produto</a>
-  <a href="ListaUsuario" class="btn btn-danger">Listar Usuários</a>
-  <a href="ListaProduto" class="btn btn-warning">Listar Produtos</a>
+  <button type="button" href="NovaEscola" class="btn btn-primary">Nova Escola</button>
+  <button type="button" href="NovoUsuario" class="btn btn-info">Novo Usuário</button>
+  <button type="button" href="NovoProduto" class="btn btn-success">Novo Produto</button>
+  <button type="button" href="ListaEscola" class="btn btn-default">Listar Escolas</button>
+  <button type="button" href="ListarUsuario" class="btn btn-danger">Listar Usuários</button>
+  <button type="button" href="Listarproduto" class="btn btn-warning">Listar Produtos</button>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -34,8 +35,9 @@ function confirma(){
            <td><?php echo $listaProduto[$i]->getTipoProduto(); ?></td>
            <td><?php echo $listaProduto[$i]->getIngredientes(); ?></td>
            <td><?php echo $listaProduto[$i]->getFornecedor(); ?></td>
-           <td><img width=55 height=55 src='<?php echo $listaProduto[$i]->getFoto(); ?>'></td>
+           <td><?php echo $listaProduto[$i]->getFoto(); ?></td>
            <td><?php echo $listaProduto[$i]->getPreco(); ?></td>
+           <td><img width=55 height=55 src='<?php echo $listaProduto[$i]->getFoto(); ?>'></td>
            <td>
            <form method="post" action="ExcluirProduto" onSubmit="return confirma();">
              <input type="hidden" name="id" value="<?php echo $listaProduto[$i]->getCodigoProduto();?>">

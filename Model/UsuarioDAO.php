@@ -2,37 +2,37 @@
 require "Conexao.php";
 class UsuarioDAO{
 
-    /*public function listarTodos(){
-        //vai ao banco de dados e pega todos os Escolas
+    public function listarTodos(){
+        //vai ao banco de dados e pega todos os Usuarios
         try{
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("select * from bd_projeto2021.escola ");
+            $sql = $minhaConexao->prepare("select * from bd_projeto2021.usuario ");
         
                 
            $sql->execute();
            $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
            
-           $listaEscola=array();
+           $listaUsuario=array();
            $i=0;
 
            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
-            $escola = new Escola();
-            $escola->setcodigoEscola($linha['codigoEscola']);
-            $escola->setNomeEscola($linha['nomeEscola']);
-            $escola->setCnpj($linha['cnpj']);
-            $escola->setTelefone($linha['telefone']);
-            $escola->setEmail($linha['email']);
-            $escola->setFoto($linha['nomeFoto']);
-            $escola->setEndereco($linha['endereco']);
-            $listaEscola[$i] = $escola;
+            $usuario = new Usuario();
+            $usuario->setCodigoUsuario($linha['codigoUsuario']);
+            $usuario->setNomeCompleto($linha['nomeCompleto']);
+            $usuario->setCpf($linha['cpf']);
+            $usuario->setTelefone($linha['telefone']);
+            $usuario->setEmail($linha['email']);
+            $usuario->setFoto($linha['nomeFoto']);
+            $usuario->setLogin($linha['login']);
+            $listaUsuario[$i] = $usuario;
             $i++;
           }
-        return $listaEscola;
+        return $listaUsuario;
        }
        catch(PDOException $e){
         return array();
        }
-    }*/
+    }
 
     
 

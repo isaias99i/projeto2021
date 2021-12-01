@@ -8,8 +8,8 @@ require "Cabecalho.php";
       <div class="col-sm-2 sidenav">
         <h3>Sobre nós:</h3>
         <div class="form-group">
-      <!--<label for="nomeEscola"><?php echo $nomeEscola ?></label>Está dando erro ao buscar essa variável... Neste caso, vou duplicar a linha e inserir uma das escolas cadastradas-->
-      <h4 for="nomeEscola">Carlos Alberto Cerqueira</h4>
+      <label for="nomeEscola"><?php echo $nomeEscola ?></label>
+      <!--<h4 for="nomeEscola">Carlos Alberto Cerqueira</h4>-->
     </div>
         <p>O Colégio Estadual Carlos Alberto Cerqueira é uma instituição de ensino da República Federativa do Brasil, 
           criada mediante transformação do Centro Federal de Educação Tecnológica da Bahia, através da Lei Federal 11.892. Sua reitoria 

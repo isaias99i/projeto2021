@@ -1,36 +1,38 @@
 <?php 
-$tituloPagina = "Alteração de Escola";
+$tituloPagina = "Alteração de Produto";
 require 'Cabecalho.php';
 ?>
 
-  <form name="AltEscola" method = "post" action="AlterarEscola">
+  <form name="AltProduto" method = "post" action="AlteraProduto">
     <div class="form-group">
-      <label for="codigoEscola">Código da Escola:</label>
-      <input type="text" class="form-control" id="codigoEscola" placeholder="Informe o código da escola" name="codigoEscola" id="codigoEscola" value = "<?php echo $codigoEscola ?>" required>
+      <label for="codigoProduto">Código da Produto:</label>
+      <input type="text" class="form-control" id="codigoProduto" placeholder="Informe o código da escola" name="codigoProduto" id="codigoProduto" value = "<?php echo $codigoProduto ?>">
     </div>
     <div class="form-group">
-      <label for="nomeEscola">Nome da Escola:</label>
-      <input type="text" class="form-control" id="nomeEscola" placeholder="Informe o nome da escola" name="nomeEscola" id="nomeEscola" value = "<?php echo $nomeEscola ?>" required>
+      <label for="nomeProduto">Nome da Produto:</label>
+      <input type="text" class="form-control" id="nomeProduto" placeholder="Informe o nome da escola" name="nomeProduto" id="nomeProduto" value = "<?php echo $nomeProduto ?>">
     </div>
     <div class="form-group">
-        <label for="cnpj">CNPJ:</label>
-        <input type="text" class="form-control" id="cnpj" placeholder="Informe a CNPJ" name="cnpj" id="cnpj" value = "<?php echo $cnpj ?>" required>
+        <label for="tipoProduto">Tipo Produto:</label>
+        <input type="radio" name="tipoProduto" value="B" checked>Bebida 
+        <input type="radio" name="tipoProduto" value="C">Comida         
+      </div>
+      
+    <div class="form-group">
+        <label for="ingredientes">Ingredientes:</label>
+        <input type="text" class="form-control" id="ingredientes" placeholder="Informe o telefonoe" name="ingredientes" id="ingredientes" value = "<?php echo $ingredientes ?>">
       </div>
     <div class="form-group">
-        <label for="telefone">Telefone:</label>
-        <input type="number" class="form-control" id="telefone" placeholder="Informe o telefonoe" name="telefone" id="telefone" value = "<?php echo $telefone ?>" required>
+        <label for="fornecedor">Fornecedor:</label>
+        <input type="text" class="form-control" id="fornecedor" placeholder="Informe a CNPJ" name="fornecedor" id="fornecedor" value = "<?php echo $fornecedor ?>">
       </div>
     <div class="form-group">
-        <label for="email">E-mail:</label>
-        <input type="text" class="form-control" id="email" placeholder="Informe a CNPJ" name="email" id="email" value = "<?php echo $email ?>" required>
+        <label for="foto">Foto:</label>
+        <input type="file" class="form-control" id="foto" placeholder="Informe a CNPJ" name="foto" id="foto" value = "<?php echo $foto ?>">
       </div>
     <div class="form-group">
-        <label for="logo">Logo:</label>
-        <input type="file" class="form-control" id="logo" placeholder="Informe a CNPJ" name="logo" id="logo" value = "<?php echo $logo ?>" required>
-      </div>
-    <div class="form-group">
-        <label for="endereco">Endereco:</label>
-        <input type="endereco" class="form-control" id="endereco" placeholder="Informe o ao de publicacao" name="endereco" id="endereco" value = "<?php echo $endereco ?>" required>
+        <label for="preco">Preço:</label>
+        <input type="preco" class="form-control" id="preco" placeholder="Informe o ao de publicacao" name="preco" id="preco" value = "<?php echo $preco ?>">
       </div>
     <button type="submit" class="btn btn-default">Enviar</button>
   </form>

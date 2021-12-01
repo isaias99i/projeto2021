@@ -7,13 +7,13 @@ body {
   }
 
   footer{
-    background-color: #77DD77;
+    
     width: 100%;
     height: 100px;
     position: absolute;
     bottom: 0;
-    left: 0;
-    }
+    left: 0;.
+    }  
    
 </style>
 

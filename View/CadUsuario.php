@@ -3,7 +3,10 @@ $tituloPagina = "Cadastro de Usuario";
 require 'Cabecalho.php';
 ?>
 
+<link rel="stylesheet" href="/projeto2021/View/CSS/base.css">
+
     <form name="cadUsuario" method = "post" action="incluirUsuario" enctype="multipart/form-data">
+    <div class="signup-form">
       <div class="form-group">
         <label for="nomeCompleto">Nome Completo:</label>
         <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite o nome da escola" name="nomeCompleto">
@@ -40,5 +43,6 @@ require 'Cabecalho.php';
       <input type="radio" name="tipoUsuario" value="A">Aluno        
       </div>
         <button type="submit" class="btn btn-primary">Enviar</button>    
+        </div>
     </form>  
 <?php require "Rodape.php";?>

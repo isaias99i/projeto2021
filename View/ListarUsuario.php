@@ -1,5 +1,5 @@
 <?php 
-$tituloPagina="Gouba | Gerenciamento";
+$tituloPagina="Gouba | Gerenciamento | Usuários";
 require "Cabecalho.php";
 ?>
 
@@ -9,9 +9,12 @@ function confirma(){
 }
 </script>
 
-  <a href="NovaUsuario" class="btn btn-primary">Nova Escola</a>
-  <a href="NovoUsuario" class="btn btn-success">Novo Usuário</a>
-  <a href="ListaUsuario" class="btn btn-success">Listar Usuários</a>
+<a href="NovaEscola" class="btn btn-primary">Nova Escola</a>
+  <a href="NovoUsuario" class="btn btn-info">Novo Usuário</a>
+  <a href="NovoProduto" class="btn btn-success">Novo Produto</a>
+  <a href="ListaEscola" class="btn btn-dark">Listar Escolas</a>
+  <a href="ListarUsuario" class="btn btn-danger">Listar Usuários</a>
+  <a href="Listarproduto" class="btn btn-warning">Listar Produtos</a>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -27,7 +30,7 @@ function confirma(){
       <?php for($i=0;$i<count($listaUsuario);$i++){ ?>
            <tr>
            <td><?php echo $listaUsuario[$i]->getCodigoUsuario(); ?></td>
-           <td><?php echo $listaUsuario[$i]->getNomeUsuario(); ?></td>
+           <td><?php echo $listaUsuario[$i]->getNomeCompleto(); ?></td>
            <td><?php echo $listaUsuario[$i]->getCpf(); ?></td>
            <td><?php echo $listaUsuario[$i]->getEmail(); ?></td>
            <td><?php echo $listaUsuario[$i]->getLogin(); ?></td>

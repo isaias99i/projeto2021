@@ -3,13 +3,16 @@
  class Usuario{
     private $codigoUsuario;
     private $nomeCompleto;
+    private $matricula;
+    private $turma;
+    private $turno;
     private $cpf;
     private $telefone;
     private $email;
     private $login;
-    private $senha;
-    //private $situacao;
-    //private $codigoresponsavel;
+    private $senha;   
+    private $saldo; 
+    private $codigoresponsavel;
     private $codigoEscola;
     private $tipoUsuario;
     private $foto;
@@ -33,6 +36,30 @@
     
     public function setNomeCompleto($nomeCompleto){
         $this->nomeCompleto = $nomeCompleto;        
+    }
+
+    public function getMatricula(){
+        return $this->matricula;
+    }
+
+    public function setMatricula($matricula){
+        $this->matricula = $matricula;
+    }
+
+    public function getTurma(){
+        return $this->turma;
+    }
+
+    public function setTurma($turma){
+        $this->turma = $turma;
+    }
+
+    public function getTurno(){
+        return $this->turno;
+    }
+
+    public function setTurno($turno){
+        $this->turno = $turno;
     }
     
     public function getCpf(){
@@ -74,15 +101,15 @@
     public function setSenha($senha){
         $this->senha = $senha;        
     }
-    
-    /*public function getSituacao(){
-        return $this->situacao;
+
+    public function getSaldo(){
+        return $this->saldo;
     }
-
-    public function setSituacao($situacao){
-        $this->situacao = $situacao;        
-    }*/
-
+    
+    public function setSaldo($saldo){
+        $this->saldo = $saldo;        
+    }
+        
     public function getCodigoEscola(){
         return $this->codigoEscola;
     }
@@ -100,6 +127,7 @@
     public function setTipoUsuario($tipoUsuario){
         $this->tipoUsuario = $tipoUsuario;        
     }
+    
     public function getFoto(){
         return $this->foto;
     }

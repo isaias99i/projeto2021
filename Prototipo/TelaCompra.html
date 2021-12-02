@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Principal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="scripts/TelaCompra.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img src="/Icons/gouba_sem_fundo.png" alt="some text" width=60 height=50>
+      </div>
+      <ul class="nav nav-tabs">
+        <li><a href="Principal.html">Home</a></li>
+        <li><a href="/Protótipo/TelaAluno.html">Aluno </a></li>
+        <li class="active"><a href="/Protótipo/TelaCompra.html">Compra </a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Produtos Selecionados</h2>
+
+    <!-- Left-aligned media object -->
+    <div class="media">
+      <div class="media-left">
+        <img src="/Icons/cafe.jfif" class="media-object" style="width:60px">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Item Selecionado</h4>
+        <p>
+        <form>
+          <p>Quantidade
+            <input type="text" name="quantidade" value="1" size="10">
+          </p>
+        </form>
+        </p>
+      </div>
+    </div>
+    <hr>
+    <div class="media-left">
+      <img src="/Icons/acai.jfif" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Item Selecionado</h4>
+      <p>
+      <form>
+        <p>Quantidade
+          <input type="text" name="quantidade" value="1" size="10">
+        </p>
+      </form>
+      </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="Cadastrar"></label>
+    <div class="col-md-12">
+      <button id="Cadastrar" name="Cadastrar" class="btn btn-primary" type="Submit">Comprar</button>
+    </div>
+  </div>
+  <hr>
+  </div>
+
+
+
+  <footer class="container-fluid text-center fix-rodape">
+    <h4>Gouba </h4>
+    <h5>Autores: Isaias, Filipe, Ronald</h5>
+  </footer>
+
+</body>
+
+</html>

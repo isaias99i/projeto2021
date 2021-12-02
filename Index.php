@@ -96,6 +96,11 @@
 					$controlador = new ControladorProdutoListar();
 					$controlador->processaRequisicao();
 					break;
+				case "TABELARESPONSAVEL":
+					require "Controller/ControladorTabelaResponsavel.php";
+					$controlador = new ControladorTabelaResponsavel();
+					$controlador->processaRequisicao();
+					break;
 				default:
 				    require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();

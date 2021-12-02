@@ -3,87 +3,75 @@ require "Conexao.php";
 class AlunoDAO{
 
     public function listarTodos(){
-        //vai ao banco de dados e pega todos os produtos
+        //vai ao banco de dados e pega todos os Alunos
         try{
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("select * from gouba.produto ");
+            $sql = $minhaConexao->prepare("select * from bd_projeto2021.aluno ");
         
                 
            $sql->execute();
            $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
            
-           $listaLiv=array();
+           $listaAluno=array();
            $i=0;
 
            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
-            $produto = new Produto();
-            $produto->setCodigo($linha['codigo']);
-            $produto->setTitulo($linha['nome']);
-            $produto->setEdicao($linha['edicao']);
-            $produto->setAno($linha['ano']);
-            $produto->setNomeImagem($linha['nomeImagem']);
-            $listaProd[$i] = $produto;
+            $aluno = new Aluno();
+            $aluno->setCodigoAluno($linha['codigoAluno']);
+            $aluno->setNomeAluno($linha['nomeAluno']);
+            $aluno->setMatricula($linha['matricula']);
+            $aluno->setTurma($linha['turma']);
+            $aluno->setTurno($linha['turno']);
+            $aluno->setTelefone($linha['telefone']);
+            $aluno->setEmail($linha['email']);
+            $aluno->setFoto($linha['nomeFoto']);
+            $aluno->setSaldo($linha['saldo']);
+
+            $listaAluno[$i] = $aluno;
             $i++;
           }
-        return $listaProd;
+        return $listaAluno;
        }
        catch(PDOException $e){
         return array();
        }
     }
 
-    public function pesquisaLivro($liv){
-        //vai ao banco de dados e pega todos os livros
-        try{
-            $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("select * from bd_livraria.livro where codigo=:codigo");
-            $sql->bindParam("codigo",$codigo);
-            $codigo = $liv->getCodigo();
-                
-           $sql->execute();
-           $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
-           
-           while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
-            $liv->setTitulo($linha['nome']);
-            $liv->setEdicao($linha['edicao']);
-            $liv->setAno($linha['ano']);
-          }
-        
-       }
-       catch(PDOException $e){
-        
-       }
-    }
+    
 
-    public function incluirLivro($liv){
+    public function incluirAluno($esc){
        try{
            $minhaConexao = Conexao::getConexao();
-           $sql = $minhaConexao->prepare("insert into bd_livraria.livro (nome, edicao, ano) values (:nome, :edicao,:ano)");
-           $sql->bindParam("nome",$nome);
-           $sql->bindParam("edicao",$edicao);
-           $sql->bindParam("ano",$ano);
-           $nome = $liv->getTitulo();
-           $edicao = $liv->getEdicao();
-           $ano = $liv->getAno();
+           $sql = $minhaConexao->prepare("insert into bd_projeto2021.aluno (nomeAluno, matricula, turma, turno, endereco) values (:nomeAluno, :matricula, :turma, :turno, :endereco)");
+           $sql->bindParam("nomeAluno",$nomeAluno);
+           $sql->bindParam("matricula",$matricula);
+           $sql->bindParam("turma",$turma);
+           $sql->bindParam("turno",$turno);
+           $sql->bindParam("endereco",$endereco);
+           $nomeAluno = $esc->getNomeAluno();
+           $matricula = $esc->getMatricula();
+           $turma = $esc->getTurma();
+           $endereco = $esc->getEndereco();
+           $turno = $esc->getTurno();
            $sql->execute();
            
            $last_id = $minhaConexao->lastInsertId();
-           $liv->setCodigo($last_id);
-           echo "Livro incluido com id=".$last_id;
-           $imagem = $liv->getImagem();  
-           if($imagem != NULL) {
-             echo "entrou no if da imagem !=null";
-            //defini o nome do novo arquivo, que será o id gerado para o livro
+           $esc->setCodigoAluno($last_id);
+           echo "aluno incluido com id=".$last_id;
+           $logo = $esc->getLogo();  
+           if($logo != NULL) {
+             echo "entrou no if da logo !=null";
+            //defini o nomeAluno do novo arquivo, que será o id gerado para o aluno
             $nomeFinal = $last_id.'.jpg';
-            //move o arquivo para a pasta atual com esse novo nome
-            if (move_uploaded_file($imagem['tmp_name'], $nomeFinal)) {
-                echo "Copiou a imagem";
-              //atualiza o banco de dados para guardar o nome do arquivo gerado.
-               $sql = $minhaConexao->prepare("update bd_livraria.livro set nomeImagem = :nomeImagem where codigo=:codigo");
-               $sql->bindParam("nomeImagem",$nomeFinal);
-               $sql->bindParam("codigo",$last_id);
+            //move o arquivo para a pasta atual com esse novo nomeAluno
+            if (move_uploaded_file($logo['tmp_name'], $nomeFinal)) {
+                echo "Copiou a logo";
+              //atualiza o banco de dados para guardar o nomeAluno do arquivo gerado.
+               $sql = $minhaConexao->prepare("update bd_projeto2021.aluno set nomeLogo = :nomeLogo where codigoAluno=:codigoAluno");
+               $sql->bindParam("nomeLogo",$nomeFinal);
+               $sql->bindParam("codigoAluno",$last_id);
                $sql->execute();
-               echo "atulizou o nome da imagem no bd";
+               echo "atualizou o nomeAluno da logo no bd";
                
              }
            }
@@ -95,18 +83,18 @@ class AlunoDAO{
         }
     }
 
-    public function alterarLivro($liv){
+    public function alterarAluno($esc){
         try{
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("update bd_livraria.livro set nome=:nome, edicao=:edicao, ano=:ano where codigo=:codigo");
-            $sql->bindParam("codigo",$codigo);
-            $sql->bindParam("nome",$nome);
-            $sql->bindParam("edicao",$edicao);
-            $sql->bindParam("ano",$ano);
-            $codigo = $liv->getCodigo();
-            $nome = $liv->getTitulo();
-            $edicao = $liv->getEdicao();
-            $ano = $liv->getAno();
+            $sql = $minhaConexao->prepare("update bd_projeto2021.aluno set nomeAluno=:nomeAluno, matricula=:matricula, turma=:turma where codigoAluno=:codigoAluno");
+            $sql->bindParam("codigoAluno",$codigoAluno);
+            $sql->bindParam("nomeAluno",$nomeAluno);
+            $sql->bindParam("matricula",$matricula);
+            $sql->bindParam("turma",$turma);
+            $codigoAluno = $esc->getCodigoAluno();
+            $nomeAluno = $esc->getNomeAluno();
+            $matricula = $esc->getMatricula();
+            $turma = $esc->getTurma();
             $sql->execute();
             
          }
@@ -115,19 +103,36 @@ class AlunoDAO{
             
          }
      }
-
-    public function excluirLivro($liv){
+     
+    public function excluirAluno($esc){
         try{
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("delete from bd_livraria.livro where codigo=:codigo");
-            $sql->bindParam("codigo",$codigo);
-            $codigo = $liv->getCodigo();
+            $sql = $minhaConexao->prepare("delete from bd_projeto2021.aluno where codigoAluno=:codigoAluno");
+            $sql->bindParam("codigoAluno",$codigoAluno);
+            $codigoAluno = $esc->getCodigoAluno();
             
             $sql->execute();
             
          }
          catch(PDOException $e){
              echo "entrou no catch".$e->getmessage();
+             exit();
+         }
+     }
+
+     public function entrarAluno($esc){
+        try{
+            $minhaConexao = Conexao::getConexao();
+            $sql = $minhaConexao->prepare("select * from bd_projeto2021.aluno where nomeAluno=:nomeAluno");
+            //$sql->bindParam("codigoAluno",$codigoAluno);
+            $sql->bindParam("nomeAluno",$nomeAluno);
+            //$nomeAluno = $esc->getNomeAluno();
+            
+            $sql->execute();
+            
+         }
+         catch(PDOException $e){
+             echo "entrou no catch! ".$e->getmessage();
              exit();
          }
      }

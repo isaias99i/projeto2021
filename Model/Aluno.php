@@ -1,145 +1,159 @@
 <?php
- require 'LivroDAO.php';
- class Livro{
-    private $codigo_aluno;
-    private $nome;
+ require 'AlunoDAO.php';
+ class Aluno{
+    private $codigoAluno;
+    private $nomeAluno;
     private $matricula;
     private $turma;
     private $turno;
     private $telefone;
     private $email;
+    private $foto;
+    private $nomeFoto;
     private $login;
-    private $senha;
-    private $situacao;
+    private $senha;    
+    private $saldo;    
     private $codigo_responsavel;
     private $codigo_escola;
 
-    public function getCodigo_aluno(){
-        return $this->codigo_aluno;
+    public function getCodigoAluno(){
+        return $this->codigoAluno;
     }
 
-    
-    public function setCodigo_aluno($codigo_aluno){
-        $this->codigo_aluno = $codigo_aluno;        
+    public function setCodigoAluno($codigoAluno){
+        $this->codigoAluno = $codigoAluno;
     }
 
-    
-    public function getNome(){
-        return $this->nome;
+    public function getNomeAluno(){
+        return $this->nomeAluno;
     }
 
-    
-    public function setNome($nome){
-        $this->nome = $nome;        
+    public function setNomeAluno($nomeAluno){
+        $this->nomeAluno = $nomeAluno;
     }
-    
+
     public function getMatricula(){
         return $this->matricula;
     }
 
     public function setMatricula($matricula){
-        $this->matricula = $matricula;        
+        $this->matricula = $matricula;
     }
-    
+
     public function getTurma(){
         return $this->turma;
     }
 
     public function setTurma($turma){
-        $this->turma = $turma;        
+        $this->turma = $turma;
     }
-    
+
     public function getTurno(){
         return $this->turno;
     }
 
     public function setTurno($turno){
-        $this->turno = $turno;        
+        $this->turno = $turno;
     }
-    
+
     public function getTelefone(){
         return $this->telefone;
     }
 
     public function setTelefone($telefone){
-        $this->telefone = $telefone;        
+        $this->telefone = $telefone;
     }
-    
+
     public function getEmail(){
         return $this->email;
     }
 
     public function setEmail($email){
-        $this->email = $email;        
+        $this->email = $email;
+    }
+
+    public function getFoto(){
+        return $this->foto;
     }
     
+    public function setFoto($foto){
+        $this->foto = $foto;        
+    }
+    
+    public function getNomeFoto(){
+        return $this->nomeFoto;
+    }
+    
+    public function setNomeFoto($nomeFoto){
+        $this->nomeFoto = $nomeFoto;
+    }
+
     public function getLogin(){
         return $this->login;
     }
 
     public function setLogin($login){
-        $this->login = $login;        
+        $this->login = $login;
     }
-    
+
     public function getSenha(){
         return $this->senha;
     }
 
     public function setSenha($senha){
-        $this->senha = $senha;        
-    }
-    
-    public function getSituacao(){
-        return $this->situacao;
+        $this->senha = $senha;
     }
 
-    public function setSituacao($situacao){
-        $this->situacao = $situacao;        
-    }
-    
     public function getCodigo_responsavel(){
         return $this->codigo_responsavel;
     }
 
     public function setCodigo_responsavel($codigo_responsavel){
-        $this->codigo_responsavel = $codigo_responsavel;        
+        $this->codigo_responsavel = $codigo_responsavel;
     }
-    
+
     public function getCodigo_escola(){
         return $this->codigo_escola;
     }
 
     public function setCodigo_escola($codigo_escola){
-        $this->codigo_escola = $codigo_escola;        
-    }
- }
-
- /*
-    public function incluirLivro(){
-         $livroDAO = new LivroDAO();
-         $livroDAO->incluirLivro($this);
+        $this->codigo_escola = $codigo_escola;
     }
 
-    public function excluirLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->excluirLivro($this);
+    public function getSaldo(){
+        return $this->saldo;
     }
-
-    public function pesquisaLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->pesquisaLivro($this);
+    
+    public function setSaldo($saldo){
+        $this->saldo = $saldo;        
     }
-
-    public function alterarLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->alterarLivro($this);
+    public function incluirAluno(){
+        $alunoDAO = new AlunoDAO();
+        $alunoDAO->incluirAluno($this);
     }
-
+    
+    public function excluirAluno(){
+       $alunoDAO = new AlunoDAO();
+       $alunoDAO->excluirAluno($this);
+    }
+    
+    public function pesquisaAluno(){
+       $alunoDAO = new AlunoDAO();
+       $alunoDAO->pesquisaAluno($this);
+    }
+    
+    public function alterarAluno(){
+       $alunoDAO = new AlunoDAO();
+       $alunoDAO->alterarAluno($this);
+    }
+    
     public function listarTodos(){
-        $livroDAO = new LivroDAO();
-        return $livroDAO->listarTodos();
+       $alunoDAO = new AlunoDAO();
+       return $alunoDAO->listarTodos();
+                
     }
-    */
+}
+
 ?>
 
 

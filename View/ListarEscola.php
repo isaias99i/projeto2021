@@ -9,12 +9,12 @@ function confirma(){
 }
 </script>
 
-  <button type="button" href="NovaEscola" class="btn btn-primary">Nova Escola</button>
-  <button type="button" href="NovoUsuario" class="btn btn-info">Novo Usuário</button>
-  <button type="button" href="NovoProduto" class="btn btn-success">Novo Produto</button>
-  <button type="button" href="ListaEscola" class="btn btn-default">Listar Escolas</button>
-  <button type="button" href="ListarUsuario" class="btn btn-danger">Listar Usuários</button>
-  <button type="button" href="Listarproduto" class="btn btn-warning">Listar Produtos</button>
+  <a href="NovaEscola" class="btn btn-primary">Nova Escola</a>
+  <a href="NovoUsuario" class="btn btn-info">Novo Usuário</a>
+  <a href="NovoProduto" class="btn btn-success">Novo Produto</a>
+  <a href="ListaEscola" class="btn btn-dark">Listar Escolas</a>
+  <a href="ListarUsuario" class="btn btn-danger">Listar Usuários</a>
+  <a href="ListaProduto" class="btn btn-warning">Listar Produtos</a>
   <table class="table table-striped">
     <thead>
       <tr>

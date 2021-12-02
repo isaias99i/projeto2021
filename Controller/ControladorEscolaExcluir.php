@@ -14,7 +14,7 @@ class ControladorEscolaExcluir implements IControlador{
       
       $this->escola->excluirEscola();
  
-      header('Location:Principal', true,302);
+      header('Location:LISTARESCOLA', true,302);
    }
 }
    

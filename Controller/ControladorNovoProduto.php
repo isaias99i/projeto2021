@@ -15,10 +15,10 @@ class ControladorNovoProduto implements IControlador{
         $this->produto->settipoProduto($_POST['tipoProduto']);
         $this->produto->setIngredientes($_POST['ingredientes']);
         $this->produto->setFornecedor($_POST['fornecedor']);
-        $this->produto->setFoto($_POST['foto']);
-        $this->produto->setPreco($_FILES['preco']);
-        $this->produto->setCodigoFornecedor($_POST['codigoFornecedor']);
-        $this->produto->setCodigoEscola($_POST['codigoEscola']);
+        $this->produto->setFoto($_FILES['foto']);
+        $this->produto->setPreco($_POST['preco']);
+        //$this->produto->setCodigoFornecedor($_POST['codigoFornecedor']);
+        //$this->produto->setCodigoEscola($_POST['codigoEscola']);
         //$this->produto->setCodigoResponsavel($_POST['codigoResponsavel']);
       
       $this->produto->incluirProduto();

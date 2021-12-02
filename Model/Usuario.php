@@ -120,19 +120,23 @@
     
     public function listarTodos(){
         $usuarioDAO = new UsuarioDAO();
-        $usuarioDAO->listarTodos($this);
+        return $usuarioDAO->listarTodos();
     }
     public function incluirUsuario(){
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->incluirUsuario($this);
     }
-     public function alterarUsuario(){
+    public function alterarUsuario(){
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->alterarUsuario($this);
     }
-     public function excluirUsuario(){
+    public function excluirUsuario(){
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->excluirUsuario($this);
+    }
+    public function entrarUsuario(){
+        $usuarioDAO = new UsuarioDAO();
+        $usuarioDAO->entrarUsuario($this);
     }
  }
  

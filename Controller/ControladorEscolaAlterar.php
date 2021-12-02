@@ -19,7 +19,7 @@ class ControladorEscolaAlterar implements IControlador{
 
         $this->escola->alterarEscola();
 
-        header('Location:Principal', true,302);
+        header('Location:LISTARESCOLA', true,302);
     }
 }
 

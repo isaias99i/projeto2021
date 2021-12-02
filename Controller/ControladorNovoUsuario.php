@@ -23,7 +23,7 @@ class ControladorNovoUsuario implements IControlador{
       
       $this->usuario->incluirUsuario();
  
-      header('Location:Principal', true,302);
+      header('Location:LISTARUSUARIO', true,302);
    }
 }
    

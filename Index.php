@@ -51,6 +51,11 @@
 					$controlador = new ControladorNovoUsuario();
 					$controlador->processaRequisicao();
 					break;
+				case "EXCLUIRUSUARIO":
+					require "Controller/ControladorUsuarioExcluir.php";
+					$controlador = new ControladorUsuarioExcluir();
+					$controlador->processaRequisicao();
+					break;
 				case "INICIO":
 					require "Controller/ControladorInicio.php";
 					$controlador = new ControladorInicio();

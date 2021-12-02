@@ -1,5 +1,5 @@
 <?php 
-$tituloPagina="Gouba | Gerenciamento";
+$tituloPagina="Inicio";
 require "Cabecalho.php";
 
 ?>

@@ -1,21 +1,4 @@
-<style>
-body {
-    margin: 0;
-    padding: 0;
-   
-    height: 100vh;
-  }
-
-  footer{
-    
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    left: 0;.
-    }  
-   
-</style>
+<link rel="stylesheet" href="/projeto2021/View/CSS/rodape.css">
 
 <footer class="container-fluid text-center fix-rodape">
     <h4>Gouba </h4>

@@ -39,7 +39,7 @@ class ProdutoDAO{
     public function incluirProduto($esc){
        try{
            $minhaConexao = Conexao::getConexao();
-           $sql = $minhaConexao->prepare("insert into bd_projeto2021.produto (nomeProduto, tipoProduto, ingredientes, fornecedor, preco, codigoFornecedor, codigoEscola) values (:nomeProduto, :tipoProduto, :ingredientes, :fornecedor, :preco, :codigoFornecedor, :codigoEscola)");
+           $sql = $minhaConexao->prepare("insert into bd_projeto2021.produto (nomeProduto, tipoProduto, ingredientes, fornecedor, preco) values (:nomeProduto, :tipoProduto, :ingredientes, :fornecedor, :preco)");
            $sql->bindParam("nomeProduto",$nomeProduto);
            $sql->bindParam("tipoProduto",$tipoProduto);
            $sql->bindParam("ingredientes",$ingredientes);

@@ -9,8 +9,8 @@ class ControladorProdutoListar implements IControlador{
     }
     
     public function processaRequisicao(){
-        $listaproduto = $this->produto->listarTodos();
-        require "View/ListaProduto.php";
+        $listaProduto = $this->produto->listarTodos();
+        require "View/ListarProduto.php";
     }
 }
     

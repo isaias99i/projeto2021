@@ -20,12 +20,11 @@
           <span class="icon-bar"></span>
         </button>
         
-        <a><img width=50 height=40 src="../Icons/gouba_sem_fundo.png"></a>
+        <a><img width=50 height=40 src="Icons/gouba_sem_fundo.png"></a>
       </div>
 
       <ul class="nav nav-tabs">
-        <li><a href="View/Principal.php">Home</a></li>        
-        <li><a href="CadEscola.php">Cadastrar Escola</a></li>        
+        <li><a href="View/Principal.php">Home</a></li>                
         
       </ul>
     </div>

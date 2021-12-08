@@ -23,7 +23,7 @@ require 'Cabecalho.php';
         <input type="text" class="form-control" id="fornecedor" placeholderFornecedor o e-mail" name="fornecedor">
       <div class="form-group">
         <label for="preco">Preco:</label>
-        <input type="text" class="form-control" id="preco" placeholder="Digite o preco" name="login">
+        <input type="numb" class="form-control" id="preco" placeholder="Digite o preco" name="preco">
       </div>            
       <div class="form-group">
         <label for="foto">Foto:</label>

@@ -33,8 +33,8 @@ function confirma(){
            <td><?php echo $listaProduto[$i]->getNomeProduto(); ?></td>
            <td><?php echo $listaProduto[$i]->getIngredientes(); ?></td>
            <td><?php echo $listaProduto[$i]->getFornecedor(); ?></td>           
-           <td><?php echo $listaProduto[$i]->getPreco(); ?></td>
            <td><img width=55 height=55 src='<?php echo $listaProduto[$i]->getFoto(); ?>'></td>
+           <td>R$ <?php echo $listaProduto[$i]->getPreco(); ?></td>
            <td>
            <form method="post" action="ExcluirProduto" onSubmit="return confirma();">
              <input type="hidden" name="id" value="<?php echo $listaProduto[$i]->getCodigoProduto();?>">
@@ -46,13 +46,7 @@ function confirma(){
              <input type="hidden" name="id" value="<?php echo $listaProduto[$i]->getCodigoProduto();?>">
              <input type="submit" class="btn btn-primary btn-sm" value= "Alterar">
            </form>
-           </td>
-           <td>
-           <form method="post" action="FormEntrarProduto" >
-             <input type="hidden" name="id" value="<?php echo $listaProduto[$i]->getCodigoProduto();?>">
-             <input type="submit" class="btn btn-success btn-sm" value= "Entrar">
-           </form>
-           </td>
+           </td>           
            </tr>   
       <?php } ?>
     </tbody>

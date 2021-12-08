@@ -7,8 +7,7 @@ class UsuarioDAO{
         try{
             $minhaConexao = Conexao::getConexao();
             $sql = $minhaConexao->prepare("select * from bd_projeto2021.usuario ");
-        
-                
+                        
            $sql->execute();
            $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
            
@@ -24,6 +23,7 @@ class UsuarioDAO{
             $usuario->setEmail($linha['email']);
             $usuario->setFoto($linha['nomeFoto']);
             $usuario->setLogin($linha['login']);
+            $usuario->setTipoUsuario($linha['tipoUsuario']);
             $listaUsuario[$i] = $usuario;
             $i++;
           }
@@ -68,7 +68,7 @@ class UsuarioDAO{
             if (move_uploaded_file($foto['tmp_name'], $nomeFinal)) {
                 echo "Copiou a foto";
               //atualiza o banco de dados para guardar o nomeCompleto do arquivo gerado.
-               $sql = $minhaConexao->prepare("update bd_projeto2021.Usuario set nomeFoto = :nomeFoto where codigoUsuario=:codigoUsuario");
+               $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set nomeFoto = :nomeFoto where codigoUsuario=:codigoUsuario");
                $sql->bindParam("nomeFoto",$nomeFinal);
                $sql->bindParam("codigoUsuario",$last_id);
                $sql->execute();
@@ -87,7 +87,7 @@ class UsuarioDAO{
     public function alterarUsuario($esc){
         try{
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("update bd_projeto2021.escola set nomeCompleto=:nomeCompleto cpf=:cpf telefone=:telefone email=:email login=:login senha=:senha where codigoUsuario=:codigoUsuario");
+            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set nomeCompleto=:nomeCompleto cpf=:cpf telefone=:telefone email=:email login=:login senha=:senha where codigoUsuario=:codigoUsuario");
             $sql->bindParam("nomeCompleto",$nomeCompleto);
            $sql->bindParam("cpf",$cpf);
            $sql->bindParam("telefone",$telefone);

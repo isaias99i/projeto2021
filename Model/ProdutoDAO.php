@@ -45,15 +45,15 @@ class ProdutoDAO{
            $sql->bindParam("ingredientes",$ingredientes);
            $sql->bindParam("fornecedor",$fornecedor);
            $sql->bindParam("preco",$preco);
-           $sql->bindParam("codigoFornecedor",$codigoFornecedor);
-           $sql->bindParam("codigoEscola",$codigoEscola);
+           /*$sql->bindParam("codigoFornecedor",$codigoFornecedor);
+           $sql->bindParam("codigoEscola",$codigoEscola);*/
            $nomeProduto = $esc->getNomeProduto();
            $tipoProduto = $esc->getTipoProduto();
            $ingredientes = $esc->getIngredientes();
            $fornecedor = $esc->getFornecedor();
            $preco = $esc->getPreco();
-           $codigoFornecedor = $esc->getCodigoFornecedor();
-           $codigoEscola = $esc->getCodigoEscola();
+           /*$codigoFornecedor = $esc->getCodigoFornecedor();
+           $codigoEscola = $esc->getCodigoEscola();*/
            $sql->execute();
            
            $last_id = $minhaConexao->lastInsertId();

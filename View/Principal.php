@@ -8,7 +8,7 @@ require "Cabecalho.php";
 
 
     <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="novaEscola" href="NovaEscola" method="post">
         <h2 class="text-center">Gouba</h2>
         <p class="sub-h2">Soluções em cantina</p>      
         <div class="form-group">

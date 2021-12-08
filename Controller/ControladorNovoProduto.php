@@ -23,7 +23,7 @@ class ControladorNovoProduto implements IControlador{
       
       $this->produto->incluirProduto();
  
-      header('Location:Principal', true,302);
+      header('Location:LISTAPRODUTO', true,302);
    }
 }
    

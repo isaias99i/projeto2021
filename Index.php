@@ -36,11 +36,6 @@
                     $controlador = new ControladorEscolaListar();
                     $controlador->processaRequisicao();
 					break;
-			    case "LISTARUSUARIO":
-					require "Controller/ControladorUsuarioListar.php";
-                    $controlador = new ControladorUsuarioListar();
-                    $controlador->processaRequisicao();
-					break;
 				case "NOVOUSUARIO":
 					require "Controller/ControladorFormUsuario.php";
 					$controlador = new ControladorFormUsuario();
@@ -56,16 +51,26 @@
 					$controlador = new ControladorUsuarioExcluir();
 					$controlador->processaRequisicao();
 					break;
-				case "INICIO":
-					require "Controller/ControladorInicio.php";
-					$controlador = new ControladorInicio();
+			    case "LISTARUSUARIO":
+					require "Controller/ControladorUsuarioListar.php";
+                    $controlador = new ControladorUsuarioListar();
+                    $controlador->processaRequisicao();
+					break;
+				case "FORMALTERUSUARIO":
+					require "Controller/ControladorFormUsuarioAlterar.php";    
+					$controlador = new ControladorFormUsuarioAlterar();
 					$controlador->processaRequisicao();
 					break;
-				case "FORMENTRARESCOLA":
-					require "Controller/ControladorEntrarEscola.php";
-					$controlador = new ControladorEntrarEscola();
+				case "ALTERARUSUARIO":
+					require "Controller/ControladorUsuarioAlterar.php";    
+					$controlador = new ControladorUsuarioAlterar();
 					$controlador->processaRequisicao();
 					break;
+				case "LOGIN":
+					require "Controller/ControladorLogin.php";
+					$controlador = new ControladorLogin();
+					$controlador->processaRequisicao();
+					break;			
 				case "NOVOPRODUTO":
 					require "Controller/ControladorFormProduto.php";    
 					$controlador = new ControladorFormProduto();
@@ -96,9 +101,14 @@
 					$controlador = new ControladorProdutoListar();
 					$controlador->processaRequisicao();
 					break;
-				case "LISTAPRODUTOALUNO":
-					require "Controller/ControladorProdutoListarAluno.php";
-					$controlador = new ControladorProdutoListarAluno();
+				case "LISTASALDOALUNO":
+					require "Controller/ControladorSaldoListarAluno.php";
+					$controlador = new ControladorSaldoListarAluno();
+					$controlador->processaRequisicao();
+					break;
+				case "TELAALUNO":
+					require "Controller/ControladorTelaAluno.php";
+					$controlador = new ControladorTelaAluno();
 					$controlador->processaRequisicao();
 					break;
 				case "TELARESPONSAVEL":
@@ -106,8 +116,28 @@
 					$controlador = new ControladorTelaResponsavel();
 					$controlador->processaRequisicao();
 					break;
-				default:
+				case "PRINCIPAL":				
 				    require "Controller/ControladorEscolaListar.php";
+				    $controlador = new ControladorEscolaListar();
+				    $controlador->processaRequisicao();
+				    break;
+					case "PROCESSALOGIN":					
+						require "Controller/ControladorProcessaLogin.php";
+						//$controlador = new ControladorProcessaLogin();
+						//$controlador->processaRequisicao();
+						break;
+					case "DEPOSITOUSUARIO":				
+						require "Controller/ControladorUsuarioDeposito.php";
+						$controlador = new ControladorUsuarioDeposito();
+						$controlador->processaRequisicao();
+						break;
+					case "FORMDEPOSITOUSUARIO":				
+						require "Controller/ControladorFormUsuarioDeposito.php";
+						$controlador = new ControladorFormUsuarioDeposito();
+						$controlador->processaRequisicao();
+						break;
+				default:
+				require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();
 				    $controlador->processaRequisicao();
 				    break;

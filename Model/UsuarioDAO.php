@@ -23,7 +23,9 @@ class UsuarioDAO{
             $usuario->setEmail($linha['email']);
             $usuario->setFoto($linha['nomeFoto']);
             $usuario->setLogin($linha['login']);
+            $usuario->setSenha($linha['senha']);
             $usuario->setTipoUsuario($linha['tipoUsuario']);
+            $usuario->setSaldo($linha['saldo']);
             $listaUsuario[$i] = $usuario;
             $i++;
           }
@@ -125,7 +127,63 @@ class UsuarioDAO{
          }
      }
 
+     public function depositoUsuario($esc){
+        try{
+            // var_dump($esc);
+            // return false;
+            $minhaConexao = Conexao::getConexao();
+            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=:saldo where codigoUsuario=:codigoUsuario");
+            $sql->bindParam("nomeCompleto",$nomeCompleto);
+            $sql->bindParam("saldo",$saldo);           
+            $sql->bindParam("valorDeposito",$valorDeposito);                       
+            // var_dump($valorDeposito);
+            // return false;
+            $nomeCompleto = $esc->getNomeCompleto();
+            $valorDeposito = $esc->getDeposito();
+            $saldo = $esc->getSaldo();
+            
+            $sql->execute();
+            
+         }
+         catch(PDOException $e){
+             echo "entrou no catch".$e->getmessage();
+            
+         }
+     }
 
-}
+//     public function logarUsuario($login){
+// //        try{
+//         $minhaConexao = Conexao::getConexao();
+//         $sql = $minhaConexao->prepare("select * from bd_projeto2021.usuario where login=:login");
+//         $sql->bindParam("login",$login);        
+//         //$sql->bindParam("senha",$senha);        
+        
+//         $login = $esc->getLogin();
+        
+        
+        
+
+//         $sql->execute();       
+
+//         while($sql->fetch()){
+//             return 1;
+//         }
+//         return 0;
+        
+        
+//     //     $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
+//     //     // var_dump($sql);
+//     //     // return $result;
+//     //     }catch(PDOException $e){
+//     //     echo "entrou no catch".$e->getmessage();
+//     //     exit();
+//     // }
+//     }
+
+    //public function validarUsuario
+
+
+    }
+
 
 ?>

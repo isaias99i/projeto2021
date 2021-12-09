@@ -24,6 +24,7 @@ function confirma(){
         <th>Telefone</th>
         <th>Tipo</th>
         <th>E-mail</th>
+        <th>Saldo</th>
         <th>Login</th>
         <th>Foto</th>
       </tr>
@@ -37,6 +38,7 @@ function confirma(){
            <td><?php echo $listaUsuario[$i]->getTelefone(); ?></td>
            <td><?php echo $listaUsuario[$i]->getTipoUsuario(); ?></td>
            <td><?php echo $listaUsuario[$i]->getEmail(); ?></td>
+           <td>R$ <?php echo $listaUsuario[$i]->getSaldo(); ?></td>
            <td><?php echo $listaUsuario[$i]->getLogin(); ?></td>
            <td><img width=55 height=55 src='<?php echo $listaUsuario[$i]->getFoto(); ?>'></td>
            <td>
@@ -49,6 +51,12 @@ function confirma(){
            <form method="post" action="FormAlterarUsuario" >
              <input type="hidden" name="id" value="<?php echo $listaUsuario[$i]->getCodigoUsuario();?>">
              <input type="submit" class="btn btn-primary btn-sm" value= "Alterar">
+           </form>
+           </td>           
+           <td>
+           <form method="post" action="FormDepositoUsuario" >
+             <input type="hidden" name="id" value="<?php echo $listaUsuario[$i]->getCodigoUsuario();?>">
+             <input type="submit" class="btn btn-success btn-sm" value= "Depositar">
            </form>
            </td>           
            </tr>   

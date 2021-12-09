@@ -17,6 +17,14 @@
     private $tipoUsuario;
     private $foto;
     private $nomeFoto;
+    private $valorDeposito;
+
+
+
+    // public function getUsuario(){
+    //     $usuario = [$this->$usuario,$this->$codigoUsuario]
+    //     return $usuario;
+    // }
 
     public function getCodigoUsuario(){
         return $this->codigoUsuario;
@@ -109,7 +117,19 @@
     public function setSaldo($saldo){
         $this->saldo = $saldo;        
     }
-        
+      
+    public function getDeposito(){
+        return $this->$valorDeposito;
+    }
+
+    public function setDeposito($valorDeposito){
+        if($valorDeposito <= 0){
+            echo "Valor indevido!";
+        }else {
+            $this->valorDeposito = $valorDeposito;
+        }
+    }    
+
     public function getCodigoEscola(){
         return $this->codigoEscola;
     }
@@ -166,34 +186,14 @@
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->entrarUsuario($this);
     }
+    public function depositoUsuario(){
+        $usuarioDAO = new UsuarioDAO();
+        $usuarioDAO->depositoUsuario($this);
+    }
+    // public function logarUsuario(){
+    //     $usuarioDAO = new UsuarioDAO();
+    //     $usuarioDAO->logarUsuario($this);
+    // }
  }
  
- /*
-    public function incluirLivro(){
-         $livroDAO = new LivroDAO();
-         $livroDAO->incluirLivro($this);
-    }
-
-    public function excluirLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->excluirLivro($this);
-    }
-
-    public function pesquisaLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->pesquisaLivro($this);
-    }
-
-    public function alterarLivro(){
-        $livroDAO = new LivroDAO();
-        $livroDAO->alterarLivro($this);
-    }
-
-    public function listarTodos(){
-        $livroDAO = new LivroDAO();
-        return $livroDAO->listarTodos();
-    }
-    */
 ?>
-
-

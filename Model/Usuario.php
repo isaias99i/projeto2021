@@ -118,9 +118,6 @@
         $this->saldo = $saldo;        
     }
       
-    public function getDeposito(){
-        return $this->$valorDeposito;
-    }
 
     public function setDeposito($valorDeposito){
         if($valorDeposito <= 0){
@@ -129,6 +126,10 @@
             $this->valorDeposito = $valorDeposito;
         }
     }    
+    
+    public function getDeposito(){
+        return $this->valorDeposito;
+    }
 
     public function getCodigoEscola(){
         return $this->codigoEscola;

@@ -129,19 +129,24 @@ class UsuarioDAO{
 
      public function depositoUsuario($esc){
         try{
-            // var_dump($esc);
-            // return false;
+            $valorDeposito = $esc->getDeposito();
+            $codigoUsuario = $esc->getCodigoUsuario();
+
+            $saldo = $this->consultaSaldo($codigoUsuario);
+            $valorDeposito = $valorDeposito + $saldo;
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=:saldo where codigoUsuario=:codigoUsuario");
-            $sql->bindParam("nomeCompleto",$nomeCompleto);
-            $sql->bindParam("saldo",$saldo);           
-            $sql->bindParam("valorDeposito",$valorDeposito);                       
+            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=:valorDeposito where codigoUsuario=:codigoUsuario ");
+           // $sql->bindParam("nomeCompleto",$nomeCompleto);
+           // $sql->bindParam("saldo",$saldo);        
+            $sql->bindParam("codigoUsuario",$codigoUsuario);           
+            $sql->bindParam("valorDeposito",$valorDeposito);  
+
             // var_dump($valorDeposito);
             // return false;
-            $nomeCompleto = $esc->getNomeCompleto();
-            $valorDeposito = $esc->getDeposito();
-            $saldo = $esc->getSaldo();
+           // $nomeCompleto = $esc->getNomeCompleto();
+
             
+            // var_dump($codigoUsuario);
             $sql->execute();
             
          }
@@ -149,6 +154,19 @@ class UsuarioDAO{
              echo "entrou no catch".$e->getmessage();
             
          }
+     }
+
+     public function consultaSaldo($codigoUsuario){
+   
+        $minhaConexao = Conexao::getConexao();
+        $sql = $minhaConexao->prepare("select saldo from bd_projeto2021.usuario where codigoUsuario=:codigoUsuario");
+        $sql->bindParam("codigoUsuario",$codigoUsuario);           
+        $sql->execute();
+
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        return intval($result[0]['saldo']);
+
      }
 
 //     public function logarUsuario($login){

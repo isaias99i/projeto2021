@@ -9,8 +9,12 @@ class ControladorFormUsuarioDeposito implements IControlador{
         $this->usuario = new Usuario();
     }
     public function processaRequisicao(){
-        //var_dump($_REQUEST);
+
         $this->usuario->setCodigoUsuario($_POST['id']);
+        $codigoUsuario = $this->usuario->getCodigoUsuario();
+
+        //$this->usuario->setCodigoUsuario($_POST['codigoUsuario']);
+
         //$this->usuario->setCodigoUsuario($_POST[]);
         // $this->usuario->setNomeCompleto($_POST[]);
         // $this->usuario->setSaldo($_POST[]);

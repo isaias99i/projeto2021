@@ -8,10 +8,10 @@ class ControladorUsuarioDeposito implements IControlador{
         $this->usuario = new Usuario();
     }
     public function processaRequisicao(){
-        
-        // // $this->usuario->getCodigoUsuario();        
+
+        $this->usuario->setCodigoUsuario($_POST['codigoUsuario']);        
         // // $this->usuario->getNomeCompleto();        
-         $this->usuario->setDeposito($_POST['valorDeposito']);         
+         $this->usuario->setDeposito($_POST['valorDeposito']);
         // //$this->usuario->getSaldo($_POST['saldo']);        
         //$saldo = $this->usuario->getSaldo();
         //$valorDeposito = $saldo + $_POST['valorDeposito'];
@@ -19,7 +19,7 @@ class ControladorUsuarioDeposito implements IControlador{
 
         $this->usuario->depositoUsuario();
 
-        // //header('Location:LISTARUSUARIO', true,302);
+        header('Location:LISTARUSUARIO', true,302);
     }
 }
 

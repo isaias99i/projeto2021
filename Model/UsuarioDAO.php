@@ -156,6 +156,14 @@ class UsuarioDAO{
          }
      }
 
+     /*
+     saldo=50
+     preço=5
+
+     preço = 50-5= 45
+
+     */
+
      public function consultaSaldo($codigoUsuario){
    
         $minhaConexao = Conexao::getConexao();
@@ -168,6 +176,12 @@ class UsuarioDAO{
         return intval($result[0]['saldo']);
 
      }
+     /*
+    compraProduto()
+    consultaPreco()
+     */
+
+     
 
 //     public function logarUsuario($login){
 // //        try{

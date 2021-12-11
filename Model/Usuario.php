@@ -191,6 +191,16 @@
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->depositoUsuario($this);
     }
+    public function compraProduto(){
+        $usuarioDAO = new UsuarioDAO();
+        $usuarioDAO->compraProduto($this);
+    }
+    
+
+
+
+
+
     // public function logarUsuario(){
     //     $usuarioDAO = new UsuarioDAO();
     //     $usuarioDAO->logarUsuario($this);

@@ -117,7 +117,15 @@
         $produtoDAO = new ProdutoDAO();
         $produtoDAO->entrarProduto($this);
     }
- }
+    public function comprarProduto(){
+        $produtoDAO = new ProdutoDAO();
+        $produtoDAO->comprarProduto($this);
+    }
+    public function consultaPreco(){
+        $produtoDAO = new ProdutoDAO();
+        $produtoDAO->consultaPreco($this);
+    }
+}
  
  ?>
 

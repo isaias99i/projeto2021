@@ -111,6 +111,27 @@ class ProdutoDAO{
          }
      }     
 
+    // public function excluirProduto($esc){
+    //     try{
+    //         $minhaConexao = Conexao::getConexao();
+    //         $sql = $minhaConexao->prepare("delete from bd_projeto2021.produto where codigoProduto=:codigoProduto");
+    //         $preco = $esc->getPreco();            
+    //         //$saldo = $esc->getSaldo();            
+    //         $preco = $saldo - $preco;
+    //         $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=saldo-:preco where codigoUsuario=:3 ");
+    //         $sql->bindParam("preco",$preco);
+    //         $sql->bindParam("codigoProduto",$codigoProduto);
+    //         $codigoProduto = $esc->getCodigoProduto();
+    //         $preco = $esc->getPreco();
+            
+    //         $sql->execute();
+            
+    //      }
+    //      catch(PDOException $e){
+    //          echo "entrou no catch".$e->getmessage();
+    //          exit();
+    //      }
+    //  }
     public function excluirProduto($esc){
         try{
             $minhaConexao = Conexao::getConexao();
@@ -126,6 +147,49 @@ class ProdutoDAO{
              exit();
          }
      }
+    
+     public function comprarProduto($esc){
+        try{
+            // var_dump($_REQUEST);
+            // return false;
+            $minhaConexao = Conexao::getConexao();
+            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=saldo-:preco where codigoUsuario=3 ");
+            //$sql->bindParam("codigoProduto",$codigoProduto);           
+            $sql->bindParam("preco",$preco);  
+            $preco = $esc->getPreco();
+            $codigoProduto = $esc->getCodigoProduto();            
+            $preco = $this->consultaPreco($codigoProduto);
+            //$preco = $saldo - $preco;
+           // $sql->bindParam("nomeCompleto",$nomeCompleto);
+           // $sql->bindParam("saldo",$saldo);        
+
+            // var_dump($valorPreco);
+            // return false;
+           // $nomeCompleto = $esc->getNomeCompleto();
+
+            
+            // var_dump($codigoProduto);
+            $sql->execute();
+            
+         }
+         catch(PDOException $e){
+             echo "entrou no catch".$e->getmessage();
+            
+         }
+     }
+
+    public function consultaPreco($codigoProduto){
+
+    $minhaConexao = Conexao::getConexao();
+    $sql = $minhaConexao->prepare("select preco from bd_projeto2021.produto where codigoProduto=:codigoProduto");
+    $sql->bindParam("codigoProduto",$codigoProduto);           
+    $sql->execute();
+
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    return intval($result[0]['preco']);
+
+    }
 
 
 }

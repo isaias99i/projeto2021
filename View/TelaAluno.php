@@ -45,9 +45,17 @@ require "Cabecalho.php";
 </style>
 
     <div class="saldo row container center">
-    <div class="col s12 center saldo">
-      <h3>Saldo em conta</h3>
-      <h2>R$ 15,37</h2>
+      <div class="col s12 center saldo">
+        <h3>Saldo em conta</h3>
+        <h2>R$ 15,37</h2>
+        <h2>
+          <form method="post" action="FormCompraProduto" >
+            <input type="hidden" name="id" value="Dep">
+            <input type="submit" class="btn btn-success btn-sm" value= "Comprar Produtos">
+          </form>  
+        
+        </h2>
+      </div>
     </div>
   
 <?php require "Rodape.php";?>

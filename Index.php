@@ -121,21 +121,36 @@
 				    $controlador = new ControladorEscolaListar();
 				    $controlador->processaRequisicao();
 				    break;
-					case "PROCESSALOGIN":					
-						require "Controller/ControladorProcessaLogin.php";
-						//$controlador = new ControladorProcessaLogin();
-						//$controlador->processaRequisicao();
-						break;
-					case "DEPOSITOUSUARIO":				
-						require "Controller/ControladorUsuarioDeposito.php";
-						$controlador = new ControladorUsuarioDeposito();
-						$controlador->processaRequisicao();
-						break;
-					case "FORMDEPOSITOUSUARIO":				
-						require "Controller/ControladorFormUsuarioDeposito.php";
-						$controlador = new ControladorFormUsuarioDeposito();
-						$controlador->processaRequisicao();
-						break;
+				case "PROCESSALOGIN":					
+					require "Controller/ControladorProcessaLogin.php";
+					//$controlador = new ControladorProcessaLogin();
+					//$controlador->processaRequisicao();
+					break;
+				case "DEPOSITOUSUARIO":				
+					require "Controller/ControladorUsuarioDeposito.php";
+					$controlador = new ControladorUsuarioDeposito();
+					$controlador->processaRequisicao();
+					break;
+				case "FORMDEPOSITOUSUARIO":				
+					require "Controller/ControladorFormUsuarioDeposito.php";
+					$controlador = new ControladorFormUsuarioDeposito();
+					$controlador->processaRequisicao();
+					break;
+				case "FORMCOMPRAPRODUTO":				
+					require "Controller/ControladorFormCompraProduto.php";
+					$controlador = new ControladorFormCompraProduto();
+					$controlador->processaRequisicao();
+					break;
+				case "FORMCOMPRA":				
+					require "Controller/ControladorFormCompra.php";
+					$controlador = new ControladorFormCompra();
+					$controlador->processaRequisicao();
+					break;
+				case "COMPRARPRODUTO":
+					require "Controller/ControladorProdutoCompra.php";    
+					$controlador = new ControladorProdutoCompra();
+					$controlador->processaRequisicao();
+					break;
 				default:
 				require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();

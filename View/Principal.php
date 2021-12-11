@@ -2,19 +2,17 @@
 $tituloPagina="Inicio";
 require "Cabecalho.php";
 
-if (isset($_POST['login'], $_POST['senha'])){
-    if($_POST['login']=='isaias' && $_POST['senha']=='teste'){
-        header('Location: View/TelaResponsavel.php');
-    }
-}
+// if (isset($_POST['login'], $_POST['senha'])){
+//     if($_POST['login']=='isaias' && $_POST['senha']=='teste'){
+//         header('Location: View/TelaResponsavel.php');
+//     }
+// }
 
 ?>
 
 <link rel="stylesheet" href="/projeto2021/View/CSS/base.css">
-
-
     <div class="login-form">
-    <form action="PROCESSALOGIN" href="PROCESSALOGIN" method="post">
+    <form name="processaLogin" action="PROCESSALOGIN"  method="post">
         <h2 class="text-center">Login</h2>
         <p class="sub-h2">Soluções em cantina</p>      
         <div class="form-group">

@@ -9,7 +9,6 @@ class ControladorLogin implements IControlador{
     }
     
     public function processaRequisicao(){
-        $listaUsuario = $this->usuario->logarUsuario();
         require "View/Principal.php";
     }
 }

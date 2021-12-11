@@ -123,8 +123,13 @@
 				    break;
 				case "PROCESSALOGIN":					
 					require "Controller/ControladorProcessaLogin.php";
-					//$controlador = new ControladorProcessaLogin();
-					//$controlador->processaRequisicao();
+					$controlador = new ControladorProcessaLogin();
+					$controlador->processaRequisicao();
+					break;
+				case "LOGIN":					
+					require "Controller/ControladorLogin.php";
+					$controlador = new ControladorLogin();
+					$controlador->processaRequisicao();
 					break;
 				case "DEPOSITOUSUARIO":				
 					require "Controller/ControladorUsuarioDeposito.php";

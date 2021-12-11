@@ -176,46 +176,40 @@ class UsuarioDAO{
         return intval($result[0]['saldo']);
 
      }
-     /*
-    compraProduto()
-    consultaPreco()
-     */
+          
 
-     
+    public function logarUsuario($esc){
+        try{
+        $minhaConexao = Conexao::getConexao();
+        $sql = $minhaConexao->prepare("select * from bd_projeto2021.usuario where login=:login AND senha=:senha");
+        $sql->bindParam("login",$login);        
+        $sql->bindParam("senha",$senha);        
+        
+        $login = $esc->getLogin();
+        $senha = $esc->getSenha();
+            
+        $sql->execute();               
+        
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);        
+        
+        session_start();
+        
+        $_SESSION['nomeCompleto'] = $result[0]['nomeCompleto'];
+        $_SESSION['codigoUsuario'] = $result[0]['codigoUsuario'];
+        $_SESSION['tipoUsuario'] = $result[0]['tipoUsuario'];
+        $_SESSION['saldo'] = $result[0]['saldo'];
+        var_dump($_SESSION);
+        return 0;
 
-//     public function logarUsuario($login){
-// //        try{
-//         $minhaConexao = Conexao::getConexao();
-//         $sql = $minhaConexao->prepare("select * from bd_projeto2021.usuario where login=:login");
-//         $sql->bindParam("login",$login);        
-//         //$sql->bindParam("senha",$senha);        
         
-//         $login = $esc->getLogin();
-        
-        
-        
-
-//         $sql->execute();       
-
-//         while($sql->fetch()){
-//             return 1;
-//         }
-//         return 0;
-        
-        
-//     //     $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
-//     //     // var_dump($sql);
-//     //     // return $result;
-//     //     }catch(PDOException $e){
-//     //     echo "entrou no catch".$e->getmessage();
-//     //     exit();
-//     // }
-//     }
-
-    //public function validarUsuario
-
+        }catch(PDOException $e){
+        echo "entrou no catch".$e->getmessage();
+        exit();
 
     }
 
+    }
+
+    }
 
 ?>

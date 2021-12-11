@@ -1,6 +1,12 @@
 <?php 
 $tituloPagina="";
 require "Cabecalho.php";
+
+
+  //Verificar se a sessão não já está aberta.   
+  session_start(); 
+
+
 ?>
 
 <style>
@@ -47,7 +53,12 @@ require "Cabecalho.php";
     <div class="saldo row container center">
       <div class="col s12 center saldo">
         <h3>Saldo em conta</h3>
-        <h2>R$ 15,37</h2>
+        <h2>
+          <?php 
+          $_SESSION['saldo'];
+        
+          ?>
+        </h2>
         <h2>
           <form method="post" action="FormCompraProduto" >
             <input type="hidden" name="id" value="Dep">

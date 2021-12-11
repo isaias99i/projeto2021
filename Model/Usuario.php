@@ -187,6 +187,10 @@
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->entrarUsuario($this);
     }
+    public function logarUsuario(){
+        $usuarioDAO = new UsuarioDAO();
+        $usuarioDAO->logarUsuario($this);
+    }
     public function depositoUsuario(){
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->depositoUsuario($this);

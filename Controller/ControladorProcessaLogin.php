@@ -13,7 +13,7 @@ class ControladorProcessaLogin implements IControlador{
 
         //var_dump($_REQUEST);
         $this->usuario->logarUsuario();
-        header('Location:View/TelaAluno.php', true,302);
+        header('Location:TelaAluno', true,302);
         
     }
 }

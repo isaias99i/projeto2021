@@ -1,13 +1,6 @@
 <?php 
 $tituloPagina="Inicio";
 require "Cabecalho.php";
-
-// if (isset($_POST['login'], $_POST['senha'])){
-//     if($_POST['login']=='isaias' && $_POST['senha']=='teste'){
-//         header('Location: View/TelaResponsavel.php');
-//     }
-// }
-
 ?>
 
 <link rel="stylesheet" href="/projeto2021/View/CSS/base.css">

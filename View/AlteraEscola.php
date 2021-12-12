@@ -3,6 +3,7 @@ $tituloPagina = "Alteração de Escola";
 require 'Cabecalho.php';
 ?>
 
+<link rel="stylesheet" href="/projeto2021/View/CSS/base.css">
   <form name="AltEscola" method = "post" action="AlterarEscola">
     <div class="form-group">
       <label for="codigoEscola">Código da Escola:</label>

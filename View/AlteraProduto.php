@@ -2,7 +2,7 @@
 $tituloPagina = "Alteração de Produto";
 require 'Cabecalho.php';
 ?>
-
+<link rel="stylesheet" href="/projeto2021/View/CSS/base.css">
   <form name="AltProduto" method = "post" action="AlteraProduto">
     <div class="form-group">
       <label for="codigoProduto">Código da Produto:</label>

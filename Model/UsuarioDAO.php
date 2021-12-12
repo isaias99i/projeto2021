@@ -129,17 +129,21 @@ class UsuarioDAO{
 
      public function depositoUsuario($esc){
         try{
+            session_start();
             $valorDeposito = $esc->getDeposito();
             $codigoUsuario = $esc->getCodigoUsuario();
 
             $saldo = $this->consultaSaldo($codigoUsuario);
             $valorDeposito = $valorDeposito + $saldo;
+            $_SESSION['saldo']=$valorDeposito;
             $minhaConexao = Conexao::getConexao();
             $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=:valorDeposito where codigoUsuario=:codigoUsuario ");
            // $sql->bindParam("nomeCompleto",$nomeCompleto);
            // $sql->bindParam("saldo",$saldo);        
             $sql->bindParam("codigoUsuario",$codigoUsuario);           
-            $sql->bindParam("valorDeposito",$valorDeposito);  
+            $sql->bindParam("valorDeposito",$valorDeposito); 
+            
+            
 
             // var_dump($valorDeposito);
             // return false;
@@ -198,8 +202,8 @@ class UsuarioDAO{
         $_SESSION['codigoUsuario'] = $result[0]['codigoUsuario'];
         $_SESSION['tipoUsuario'] = $result[0]['tipoUsuario'];
         $_SESSION['saldo'] = $result[0]['saldo'];
-        var_dump($_SESSION);
-        return 0;
+        return ($_SESSION);
+        
 
         
         }catch(PDOException $e){

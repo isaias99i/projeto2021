@@ -21,7 +21,6 @@ function confirma(){
         <th>Códigos</th>
         <th>Nome</th>
         <th>CPF</th>
-        <th>Telefone</th>
         <th>Tipo</th>
         <th>E-mail</th>
         <th>Saldo</th>
@@ -35,10 +34,9 @@ function confirma(){
            <td><?php echo $listaUsuario[$i]->getCodigoUsuario(); ?></td>
            <td><?php echo $listaUsuario[$i]->getNomeCompleto(); ?></td>
            <td><?php echo $listaUsuario[$i]->getCpf(); ?></td>
-           <td><?php echo $listaUsuario[$i]->getTelefone(); ?></td>
-           <td><?php echo $listaUsuario[$i]->getTipoUsuario(); ?></td>
+           <td><?php echo $listaUsuario[$i]->getTipoUsuario()=='a'?'Aluno':'Responsável'; ?></td>
            <td><?php echo $listaUsuario[$i]->getEmail(); ?></td>
-           <td>R$ <?php echo $listaUsuario[$i]->getSaldo(); ?></td>
+           <td>R$ <?php echo number_format($listaUsuario[$i]->getSaldo(),2,',','.');?></td>
            <td><?php echo $listaUsuario[$i]->getLogin(); ?></td>
            <td><img width=55 height=55 src='<?php echo $listaUsuario[$i]->getFoto(); ?>'></td>
            <td>

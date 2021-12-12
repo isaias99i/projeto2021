@@ -152,8 +152,8 @@
 					$controlador->processaRequisicao();
 					break;
 				case "COMPRARPRODUTO":
-					require "Controller/ControladorProdutoCompra.php";    
-					$controlador = new ControladorProdutoCompra();
+					require "Controller/ControladorComprarProduto.php";    
+					$controlador = new ControladorComprarProduto();
 					$controlador->processaRequisicao();
 					break;
 				default:

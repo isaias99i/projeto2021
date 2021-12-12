@@ -24,7 +24,8 @@
       </div>
 
       <ul class="nav nav-tabs">
-        <li><a href="View/Principal.php">Home</a></li>                
+        <li><a href="LOGIN">Home</a></li>                
+        <li><a href="View/Principal.php">Sair</a></li>                
         
       </ul>
     </div>

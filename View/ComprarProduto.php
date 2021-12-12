@@ -1,6 +1,7 @@
 <?php 
 $tituloPagina="Gouba | Compra Produtos";
 require "Cabecalho.php";
+session_start();
 ?>
 
 <script>

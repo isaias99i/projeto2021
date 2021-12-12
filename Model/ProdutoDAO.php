@@ -150,25 +150,16 @@ class ProdutoDAO{
     
      public function comprarProduto($esc){
         try{
-            // var_dump($_REQUEST);
-            // return false;
+            
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=saldo-:preco where codigoUsuario=3 ");
-            //$sql->bindParam("codigoProduto",$codigoProduto);           
+            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=saldo-:preco where codigoUsuario=3");
+            
+            //$sql->bindParam("codigoUsuario",$codigoUsuario);              
             $sql->bindParam("preco",$preco);  
             $preco = $esc->getPreco();
             $codigoProduto = $esc->getCodigoProduto();            
             $preco = $this->consultaPreco($codigoProduto);
-            //$preco = $saldo - $preco;
-           // $sql->bindParam("nomeCompleto",$nomeCompleto);
-           // $sql->bindParam("saldo",$saldo);        
-
-            // var_dump($valorPreco);
-            // return false;
-           // $nomeCompleto = $esc->getNomeCompleto();
-
             
-            // var_dump($codigoProduto);
             $sql->execute();
             
          }

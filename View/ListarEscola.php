@@ -16,6 +16,7 @@ function confirma(){
   <a href="ListarUsuario" class="btn btn-danger">Listar Usuários</a>
   <a href="ListaProduto" class="btn btn-warning">Listar Produtos</a>
   <a href="TelaAluno" class="btn btn-warning">Tela do Aluno</a>
+  <a href="TelaResponsavel" class="btn btn-warning">Tela do Responsavel</a>
   <table class="table table-striped">
     <thead>
       <tr>

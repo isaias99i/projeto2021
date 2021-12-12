@@ -1,5 +1,6 @@
 <?php
  require 'ProdutoDAO.php';
+ 
  class Produto{
     private $codigoProduto;
     private $nomeProduto;

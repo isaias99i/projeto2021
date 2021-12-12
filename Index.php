@@ -56,7 +56,7 @@
                     $controlador = new ControladorUsuarioListar();
                     $controlador->processaRequisicao();
 					break;
-				case "FORMALTERUSUARIO":
+				case "FORMALTERARUSUARIO":
 					require "Controller/ControladorFormUsuarioAlterar.php";    
 					$controlador = new ControladorFormUsuarioAlterar();
 					$controlador->processaRequisicao();
@@ -116,6 +116,11 @@
 					$controlador = new ControladorTelaResponsavel();
 					$controlador->processaRequisicao();
 					break;
+				case "FORMTELARESPONSAVEL":
+					require "Controller/ControladorFormTelaResponsavel.php";
+					$controlador = new ControladorFormTelaResponsavel();
+					$controlador->processaRequisicao();
+					break;
 				case "PRINCIPAL":				
 				    require "Controller/ControladorEscolaListar.php";
 				    $controlador = new ControladorEscolaListar();
@@ -154,6 +159,11 @@
 				case "COMPRARPRODUTO":
 					require "Controller/ControladorComprarProduto.php";    
 					$controlador = new ControladorComprarProduto();
+					$controlador->processaRequisicao();
+					break;
+				case "REALIZARCOMPRA":
+					require "Controller/ControladorRealizarCompra.php";    
+					$controlador = new ControladorRealizarCompra();
 					$controlador->processaRequisicao();
 					break;
 				default:

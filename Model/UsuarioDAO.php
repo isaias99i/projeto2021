@@ -191,6 +191,7 @@ class UsuarioDAO{
         
         $login = $esc->getLogin();
         $senha = $esc->getSenha();
+        $tipoUsuario = $esc->getTipoUsuario();
             
         $sql->execute();               
         

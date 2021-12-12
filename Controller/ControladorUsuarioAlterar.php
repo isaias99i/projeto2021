@@ -12,12 +12,9 @@ class ControladorUsuarioAlterar implements IControlador{
         $this->usuario->setNomeCompleto($_POST['nomeCompleto']);
         $this->usuario->setTurma($_POST['turma']);
         $this->usuario->setTurno($_POST['turno']);
-        $this->usuario->setCpf($_POST['cpf']);
         $this->usuario->setTelefone($_POST['telefone']);
         $this->usuario->setEmail($_POST['email']);
         $this->usuario->setFoto($_FILES['foto']);
-        $this->usuario->setDeposito($_POST['deposito']);
-        //$this->usuario->setCodigoResponsavel($_POST['codigoResponsavel']);
 
         $this->usuario->alterarUsuario();
 

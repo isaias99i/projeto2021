@@ -30,7 +30,7 @@ function confirma(){
            <td><img width=55 height=55 src='<?php echo $listaProduto[$i]->getFoto(); ?>'></td>
            <td>R$ <?php echo $listaProduto[$i]->getPreco(); ?></td>
            <td>
-           <form method="post" action="ComprarProduto" onSubmit="return confirma();">
+           <form method="post" action="RealizarCompra" onSubmit="return confirma();">
              <input type="hidden" name="id" value="<?php echo $listaProduto[$i]->getCodigoProduto();?>">
              <input type="submit" class="btn btn-danger btn-sm" value= "Comprar">
            </form>

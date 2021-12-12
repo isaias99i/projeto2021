@@ -10,6 +10,7 @@ class ControladorFormUsuarioAlterar implements IControlador{
     }
     public function processaRequisicao(){
         $this->usuario->setCodigoUsuario($_POST['id']);        
+        $this->usuario->setCodigoUsuario($_POST['id']);        
         $codigoUsuario = $this->usuario->getCodigoUsuario();
         $nomeCompleto = $this->usuario->getNomeCompleto($_POST['nomeCompleto']);
         $turma = $this->usuario->getTurma($_POST['turma']);

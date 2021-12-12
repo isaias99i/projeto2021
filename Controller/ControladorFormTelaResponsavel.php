@@ -9,8 +9,8 @@ class ControladorTelaResponsavel implements IControlador{
     }
     
     public function processaRequisicao(){
-        $listaUsuario = $this->usuario->listarTodos();
-        require "View/TelaResponsavel.php";
+        //$listaUsuario = $this->usuario->listarTodos();
+        require "FORMTELARESPONSAVEL";
     }
 }
     

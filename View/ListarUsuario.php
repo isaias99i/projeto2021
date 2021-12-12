@@ -34,7 +34,7 @@ function confirma(){
            <td><?php echo $listaUsuario[$i]->getCodigoUsuario(); ?></td>
            <td><?php echo $listaUsuario[$i]->getNomeCompleto(); ?></td>
            <td><?php echo $listaUsuario[$i]->getCpf(); ?></td>
-           <td><?php echo $listaUsuario[$i]->getTipoUsuario()=='a'?'Aluno':'Responsável'; ?></td>
+           <td><?php echo $listaUsuario[$i]->getTipoUsuario()=='A'?'Aluno':'Responsável'; ?></td>
            <td><?php echo $listaUsuario[$i]->getEmail(); ?></td>
            <td>R$ <?php echo number_format($listaUsuario[$i]->getSaldo(),2,',','.');?></td>
            <td><?php echo $listaUsuario[$i]->getLogin(); ?></td>

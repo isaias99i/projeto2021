@@ -1,7 +1,14 @@
 <?php 
-$tituloPagina="Tela Responsável";
+$tituloPagina="";
 require "Cabecalho.php";
+session_start();
+
 ?>
+<h2> Bem vindo 
+  <?php 
+    echo $_SESSION['nomeCompleto'];         
+  ?>
+</h2>
 
 <script>
 function confirma(){

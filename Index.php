@@ -41,6 +41,11 @@
 					$controlador = new ControladorFormUsuario();
 					$controlador->processaRequisicao();
 					break;
+				case "NOVOALUNO":
+					require "Controller/ControladorFormAluno.php";
+					$controlador = new ControladorFormAluno();
+					$controlador->processaRequisicao();
+					break;
 				case "INCLUIRUSUARIO":
 					require "Controller/ControladorNovoUsuario.php";
 					$controlador = new ControladorNovoUsuario();
@@ -167,10 +172,10 @@
 					$controlador->processaRequisicao();
 					break;
 				default:
-				require "Controller/ControladorEscolaListar.php";
-				    $controlador = new ControladorEscolaListar();
-				    $controlador->processaRequisicao();
-				    break;
+				require "Controller/ControladorLogin.php";
+					$controlador = new ControladorLogin();
+					$controlador->processaRequisicao();
+					break;
 			
 			}
 			  

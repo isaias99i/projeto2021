@@ -20,13 +20,13 @@
           <span class="icon-bar"></span>
         </button>
         
-        <a><img width=50 height=40 src="/Icons/gouba_sem_fundo.png"></a>
+        <a><img width=50 height=40 src="Icons/gouba_sem_fundo.png"></a>
       </div>
 
       <ul class="nav nav-tabs">
         <li><a href="LOGIN">Home</a></li>                
+        <li><a href="TelaAluno">Tela Aluno</a></li>                
         <li><a href="#">Sair</a></li>                
-        <li><a href="ListaEscola">Lista de Escolas Cadastradas</a></li>                
         
       </ul>
     </div>

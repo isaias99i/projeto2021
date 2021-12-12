@@ -1,6 +1,6 @@
 <?php 
 $tituloPagina="Gouba | Compra Produtos";
-require "Cabecalho.php";
+require "CabecalhoAluno.php";
 session_start();
 ?>
 

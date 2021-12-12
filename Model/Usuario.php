@@ -12,7 +12,7 @@
     private $login;
     private $senha;   
     private $saldo; 
-    private $codigoresponsavel;
+    private $codigoResponsavel;
     private $codigoEscola;
     private $tipoUsuario;
     private $foto;
@@ -33,6 +33,14 @@
     
     public function setCodigoUsuario($codigoUsuario){
         $this->codigoUsuario = $codigoUsuario;        
+    }
+    public function getCodigoResponsavel(){
+        return $this->codigoResponsavel;
+    }
+
+    
+    public function setCodigoResponsavel($codigoResponsavel){
+        $this->codigoResponsavel = $codigoResponsavel;        
     }
     
 

@@ -14,7 +14,7 @@ class ControladorRealizarCompra implements IControlador{
       
       $this->produto->comprarProduto();
  
-      header('Location:PRODUTOCOMPRA', true,302);
+      header('Location:TelaAluno', true,302);
    }
 }
    

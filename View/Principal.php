@@ -22,7 +22,7 @@ require "Cabecalho.php";
             <a href="#" class="float-right"> Esqueceu a senha?</a>
         </div>  
         <br>      
-        <p class="text-center"><a href="#">Criar uma conta</a></p>
+        <p class="text-center"><a href="NovoUsuario">Criar uma conta</a></p>
     </form>
 </div>
 

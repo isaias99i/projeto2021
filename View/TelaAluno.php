@@ -1,6 +1,6 @@
 <?php 
 $tituloPagina="";
-require "Cabecalho.php";
+require "CabecalhoAluno.php";
 
   session_start();
 

@@ -51,6 +51,11 @@
 					$controlador = new ControladorNovoUsuario();
 					$controlador->processaRequisicao();
 					break;
+				case "INCLUIRALUNO":
+					require "Controller/ControladorNovoAluno.php";
+					$controlador = new ControladorNovoAluno();
+					$controlador->processaRequisicao();
+					break;
 				case "EXCLUIRUSUARIO":
 					require "Controller/ControladorUsuarioExcluir.php";
 					$controlador = new ControladorUsuarioExcluir();

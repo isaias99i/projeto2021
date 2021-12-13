@@ -1,5 +1,4 @@
 <?php
-
 require_once "IControlador.php";
 require_once "Model/Usuario.php";
 
@@ -9,8 +8,7 @@ class ControladorFormUsuarioAlterar implements IControlador{
         $this->usuario = new Usuario();
     }
     public function processaRequisicao(){
-        $this->usuario->setCodigoUsuario($_POST['id']);        
-        $this->usuario->setCodigoUsuario($_POST['id']);        
+        $this->usuario->setCodigoUsuario($_POST['id']);                      
         $codigoUsuario = $this->usuario->getCodigoUsuario();
         $nomeCompleto = $this->usuario->getNomeCompleto($_POST['nomeCompleto']);
         $turma = $this->usuario->getTurma($_POST['turma']);

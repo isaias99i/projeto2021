@@ -19,7 +19,7 @@ class ControladorUsuarioDeposito implements IControlador{
 
         $this->usuario->depositoUsuario();
 
-        header('Location:LISTARUSUARIO', true,302);
+        header('Location:TELARESPONSAVEL', true,302);
     }
 }
 

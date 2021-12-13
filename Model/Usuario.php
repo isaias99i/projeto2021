@@ -34,6 +34,7 @@
     public function setCodigoUsuario($codigoUsuario){
         $this->codigoUsuario = $codigoUsuario;        
     }
+    
     public function getCodigoResponsavel(){
         return $this->codigoResponsavel;
     }
@@ -178,6 +179,10 @@
     public function listarTodos(){
         $usuarioDAO = new UsuarioDAO();
         return $usuarioDAO->listarTodos();
+    }
+    public function listarTodosFilhos(){
+        $usuarioDAO = new UsuarioDAO();
+        return $usuarioDAO->listarTodosFilhos();
     }
     public function incluirUsuario(){
         $usuarioDAO = new UsuarioDAO();

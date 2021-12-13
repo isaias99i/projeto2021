@@ -35,13 +35,47 @@ class UsuarioDAO{
         return array();
        }
     }
+    public function listarTodosFilhos(){
+        //vai ao banco de dados e pega todos os Filhps
+        try{
+            $minhaConexao = Conexao::getConexao();
+            $sql = $minhaConexao->prepare("select * from bd_projeto2021.usuario where codigoResponsavel=1");
+            
+           $sql->execute();
+           $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
+           
+           $listaUsuario=array();
+           $i=0;
+
+           while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+            $usuario = new Usuario();
+            $usuario->setCodigoUsuario($linha['codigoUsuario']);
+            $usuario->setNomeCompleto($linha['nomeCompleto']);
+            $usuario->setCpf($linha['cpf']);
+            $usuario->setTelefone($linha['telefone']);
+            $usuario->setEmail($linha['email']);
+            $usuario->setFoto($linha['nomeFoto']);
+            $usuario->setLogin($linha['login']);
+            $usuario->setSenha($linha['senha']);
+            $usuario->setTipoUsuario($linha['tipoUsuario']);
+            $usuario->setSaldo($linha['saldo']);
+            $usuario->setCodigoResponsavel($linha['codigoResponsavel']);
+            $listaUsuario[$i] = $usuario;
+            $i++;
+          }
+        return $listaUsuario;
+       }
+       catch(PDOException $e){
+        return array();
+       }
+    }
 
     
 
     public function incluirUsuario($esc){
        try{
            $minhaConexao = Conexao::getConexao();
-           $sql = $minhaConexao->prepare("insert into bd_projeto2021.usuario (nomeCompleto, cpf, telefone, email, login, senha, tipoUsuario) values (:nomeCompleto, :cpf, :telefone, :email, :login, :senha, :tipoUsuario)");
+           $sql = $minhaConexao->prepare("insert into bd_projeto2021.usuario (nomeCompleto, cpf, telefone, email, login, senha, tipoUsuario, codigoResponsavel) values (:nomeCompleto, :cpf, :telefone, :email, :login, :senha, :tipoUsuario, :codigoResponsavel)");
            $sql->bindParam("nomeCompleto",$nomeCompleto);
            $sql->bindParam("cpf",$cpf);
            $sql->bindParam("telefone",$telefone);
@@ -49,6 +83,7 @@ class UsuarioDAO{
            $sql->bindParam("login",$login);
            $sql->bindParam("senha",$senha);
            $sql->bindParam("tipoUsuario",$tipoUsuario);
+           $sql->bindParam("codigoResponsavel",$codigoResponsavel);
            $nomeCompleto = $esc->getNomeCompleto();
            $cpf = $esc->getCpf();
            $telefone = $esc->getTelefone();
@@ -56,6 +91,7 @@ class UsuarioDAO{
            $senha = $esc->getSenha();
            $email = $esc->getEmail();
            $tipoUsuario = $esc->getTipoUsuario();
+           $codigoResponsavel = $esc->getCodigoResponsavel();
            $sql->execute();
            
            $last_id = $minhaConexao->lastInsertId();

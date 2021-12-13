@@ -1,5 +1,5 @@
 <?php
-require "Model/Escola.php";
+require "Model/Usuario.php";
 require_once "IControlador.php";
 class ControladorFormUsuario implements IControlador{
     

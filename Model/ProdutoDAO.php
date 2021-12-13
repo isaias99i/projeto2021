@@ -152,7 +152,7 @@ class ProdutoDAO{
         try{
             
             $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=saldo-:preco where codigoUsuario=1");
+            $sql = $minhaConexao->prepare("update bd_projeto2021.usuario set saldo=saldo-:preco where codigoUsuario=2");
             
             //$sql->bindParam("codigoUsuario",$codigoUsuario);              
             $sql->bindParam("preco",$preco);  

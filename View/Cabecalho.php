@@ -25,8 +25,8 @@
 
       <ul class="nav nav-tabs">
         <li><a href="LOGIN">Home</a></li>                
-        <li><a href="#">Sair</a></li>                
-        <li><a href="ListaEscola">Lista de Escolas Cadastradas</a></li>                
+        <li><a href="LOGIN">Sair</a></li>                
+        <li><a href="ListarEscola">Gerenciamento</a></li>                
         
       </ul>
     </div>

@@ -16,15 +16,13 @@ function confirma(){
 }
 </script>
 
-  <a href="NovoUsuario" class="btn btn-info">Novo Aluno(a)</a>  
-  <a href="ListarUsuario" class="btn btn-danger">Listar Usuários</a>  
+  <a href="NovoAluno" class="btn btn-info">Novo Aluno(a)</a>    
   <table class="table table-striped">
     <thead>
     <tr>
         <th>Códigos</th>
         <th>Nome</th>
-        <th>CPF</th>
-        <th>Tipo</th>
+        <th>CPF</th>      
         <th>E-mail</th>
         <th>Saldo</th>
         <th>Login</th>
@@ -36,8 +34,7 @@ function confirma(){
            <tr>
            <td><?php echo $listaUsuario[$i]->getCodigoUsuario(); ?></td>
            <td><?php echo $listaUsuario[$i]->getNomeCompleto(); ?></td>
-           <td><?php echo $listaUsuario[$i]->getCpf(); ?></td>
-           <td><?php echo $listaUsuario[$i]->getTipoUsuario()=='A'?'Aluno':'Responsável'; ?></td>
+           <td><?php echo $listaUsuario[$i]->getCpf(); ?></td>           
            <td><?php echo $listaUsuario[$i]->getEmail(); ?></td>
            <td>R$ <?php echo number_format($listaUsuario[$i]->getSaldo(),2,',','.');?></td>
            <td><?php echo $listaUsuario[$i]->getLogin(); ?></td>
